@@ -1,0 +1,156 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: rgb(155, 157, 158);
+}
+
+header {font-family: arial, cursive;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: lighter;
+    background-color: rgb(155, 157, 158);
+    padding: 10px;
+    margin: 5px;  
+}
+
+section {
+    font-family: Arial, Helvetica, sans-serif, cursive;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: lighter;
+    background-color: rgb(155, 157, 158);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 20px;
+    color: darkblue;
+    text-align: center;
+    padding: 18px 0 18px 0;
+    margin: 0 0 10px 0;
+    
+}
+
+h1 span {
+    border: 4px solid darkblue;
+    padding: 10px;
+    border-radius: 5px
+}
+.tete {
+    display: flex;     
+    justify-content: center;     
+    align-items: center;
+    max-width:  100%;
+    flex-direction: column;
+}
+
+#resto {
+    display: flex;     
+    justify-content: center;     
+    align-items: center; 
+    height: 500px;    
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+  
+  li {
+    float: left;
+}
+  
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+  
+  li a:hover {
+    background-color: darkgrey;
+}
+
+form {
+    text-align: center;
+    margin-top: 0;
+}
+.submit {
+    background-color: #3fb6b2;
+    padding: 12px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    margin: 0;
+    font-weight: bold;
+}
+.submit:hover {
+    background-color: #43a09d;
+}
+textarea {
+    height: 100px;
+}
+input, textarea {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    padding: 15px 10px 10px;
+    border: 1px solid #cecece;
+    background-color: #efefef;
+    color: #787575;
+    border-radius: 5px;
+    width: 70%;
+    outline: none;
+}
+.face {
+    transform: scale(0.4);
+    margin: 0 auto;
+    display: block;
+    margin-top: -35px;
+    margin-bottom: -25px;
+}
+#contacts img {
+    height: 50px;
+    width: 50px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+#contacts a {
+    text-decoration: none;
+}
+#contacts img:hover {
+    opacity: 0.8;
+}
+#contacts {
+    text-align: center;
+}
+.copyright {
+    font-size: 10pt;
+    text-align: right;
+    padding-bottom: 10px;
+    color: black;
+}
+.section1 {
+    font-family: Arial, Helvetica, sans-serif, cursive;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: lighter;
+    text-align: center;
+}
