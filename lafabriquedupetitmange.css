@@ -17,7 +17,7 @@ header {font-family: arial, cursive;
     padding: 10px;
     margin: 5px;  
 }
-
+    /** gestion police charactere bandeau titre page 1 start**/
 section {
     font-family: Arial, Helvetica, sans-serif, cursive;
     font-size: 18px;
@@ -28,8 +28,20 @@ section {
     margin: 5px;
     border-radius: 5px;
 }
+    /** gestion police charactere bandeau titre page 1 end**/
 
-h1 {
+    /** gestion format bandeau titre page 1 start**/
+.tete {
+    display: flex;     
+    justify-content: center;     
+    align-items: center;
+    max-width:  100%;
+    flex-direction: column;
+}
+    /** gestion format bandeau titre page 1 end**/
+
+    /* page 1 boite coloeur du chef Start */
+.chef {
     font-size: 20px;
     color: darkblue;
     text-align: center;
@@ -43,13 +55,8 @@ h1 span {
     padding: 10px;
     border-radius: 5px
 }
-.tete {
-    display: flex;     
-    justify-content: center;     
-    align-items: center;
-    max-width:  100%;
-    flex-direction: column;
-}
+    /* page 1 boite coloeur du chef End */
+
 
 #resto {
     display: flex;     
@@ -60,7 +67,7 @@ h1 span {
     border-radius: 10px;
     
 }
-
+/* menu deroulant start */
 ul {
     list-style-type: none;
     margin: 0;
@@ -68,25 +75,21 @@ ul {
     overflow: hidden;
     font-weight: bold;
     font-size: 18px;
-
-}
-  
+} 
   li {
     float: left;
-}
-  
+} 
   li a {
     display: block;
     color: black;
     text-align: center;
     padding: 16px;
     text-decoration: none;
-}
-  
+} 
   li a:hover {
     background-color: darkgrey;
 }
-
+/* menu deroulant end */
 form {
     text-align: center;
     margin-top: 0;

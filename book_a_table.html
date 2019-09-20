@@ -1,96 +1,100 @@
 <!DOCTYPE html>
 <html>
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equip="X-UA-Compatible" content="ie=edge">
-            <title>la fabrique du petit mange</title>
-            <link href="lafabriquedupetitmange.css" rel="stylesheet">
-        </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equip="X-UA-Compatible" content="ie=edge">
+    <title>la fabrique du petit mange</title>
+    <link href="lafabriquedupetitmange.css" rel="stylesheet">
+</head>
 
 
 
-            <ul>
-                <li><a href="lafabriquedupetitmange.html">home</a></li>   
-                <li><a href="today_menu.html">Today menu</a></li>
-                <li><a href="chef_speciality.html">Chef Speciality</a></li>
-                <li><a href="book_a_table.html">Book a table</a></li>
-                <li><a href="golden_book.html">Golden book </a></li>
-            </ul>
+<ul>
+    <li><a href="lafabriquedupetitmange.html">home</a></li>
+    <li><a href="today_menu.html">Today menu</a></li>
+    <li><a href="chef_speciality.html">Chef Speciality</a></li>
+    <li><a href="book_a_table.html">Book a table</a></li>
+    <li><a href="golden_book.html">Golden book </a></li>
+</ul>
 
-    <body>
+<body>
 
-        <form>
-            <input name="First name" placeholder="Name" type="text" required /><br/>
-            <input name="email" placeholder="Email" type="email" required /><br/>
-            <textarea name="message" placeholder="Message" required ></textarea>
-            <input type="submit" value="SEND" class="submit" />
-            <select id="country" name="country">
-                <option value="australia">Australia</option>
-                <option value="canada">Canada</option>
-                <option value="usa">USA</option>
-              </select>
-        </form>
+    <form>
+        <input name="First name" placeholder="Name" type="text" required /><br />
+        
+        <input name="email" placeholder="Email" type="email" required /><br />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <input type="submit" value="SEND" class="submit" />
+        <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+        </select>
+    </form>
+
     <!---->
     <h2>Responsive Form</h2>
-<p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
 
-<div class="container">
-  <form action="/action_page.php">
-  <div class="row">
-    <div class="col-25">
-      <label for="fname">First Name</label>
+    <div class="container">
+        <form action="/action_page.php">
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">Last Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Country</label>
+                </div>
+                <div class="col-75">
+                    <select id="country" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                        <option value="france">France</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write something.."
+                        style="height:200px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
     </div>
-    <div class="col-75">
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+
+
+
+
+
+
+
+
+
+    <div class="copyright">
+        &copy; 2019 Greg. All rights reserved.
     </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="lname">Last Name</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="country">Country</label>
-    </div>
-    <div class="col-75">
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-        <option value="france">France</option>
-      </select>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="subject">Subject</label>
-    </div>
-    <div class="col-75">
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    </div>
-  </div>
-  <div class="row">
-    <input type="submit" value="Submit">
-  </div>
-  </form>
-</div>
-    
+</body>
 
-
-
-
-
-
-
-            
-
-                    <div class="copyright">
-                        &copy; 2019 Greg. All rights reserved.
-                    </div>
-        </body>
 </html>
