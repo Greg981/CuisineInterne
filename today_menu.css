@@ -15,6 +15,7 @@ header {
   padding: 10px;
   margin: 5px;  
 }
+/** plus necessaire**/
 /**encore necessaire**/
 body {
     background-color: rgb(155, 157, 158);
@@ -23,6 +24,9 @@ body {
     font-style: italic;
     font-weight: lighter;
 }
+/**encore necessaire**/
+/** plus necessaire**/
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -47,6 +51,8 @@ ul {
   li a:hover {
     background-color: darkgrey;
 }
+/** plus necessaire**/
+
 /* pour mettre image à gauche */
 #menu img{
     height: 450px;
