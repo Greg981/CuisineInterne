@@ -30,6 +30,19 @@ section {
 }
     /** gestion police charactere bandeau titre page 1 end**/
 
+    /** gestion police charactere bandeau titre page 2 start**/
+    .section2 {
+        font-family: Arial, Helvetica, sans-serif, cursive;
+        font-size: 18px;
+        font-style: italic;
+        font-weight: lighter;
+        background-color: rgb(155, 157, 158);
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+    }
+        /** gestion police charactere bandeau titre page 2 end**/
+
     /** gestion format bandeau titre page 1 start**/
 .tete {
     display: flex;     
@@ -89,6 +102,47 @@ ul {
     background-color: darkgrey;
 }
     /* menu deroulant end */
+    
+/* pour mettre image à gauche */
+#menu img{
+    height: 450px;
+    width:  450px;
+    border-radius: 8px;
+
+}
+
+#menu{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+/* pour text à droite de l'image */
+    /* mise en page menu start */
+.boitetext{
+    display: flex;
+    background-color:lavenderblush;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    text-align:center;
+}
+      
+.boite{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+      }
+      
+.fix-both{
+    align-items: flex-end;
+}
+      
+.titrerecette{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+    /* mise en page menu end */
 
     /* section copyright start*/
 .copyright {
@@ -97,7 +151,7 @@ ul {
     padding-bottom: 10px;
     color: black;
 }
-    /* contenant photo end*/
+    /* section copyright end*/
 form {
     text-align: center;
     margin-top: 0;
