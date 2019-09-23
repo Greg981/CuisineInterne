@@ -17,8 +17,8 @@ header {font-family: arial, cursive;
     padding: 10px;
     margin: 5px;  
 }
-    /** gestion police charactere bandeau titre page 1 start**/
-section {
+    /** gestion police charactere bandeau titre start**/
+section, .section2, .section1{
     font-family: Arial, Helvetica, sans-serif, cursive;
     font-size: 18px;
     font-style: italic;
@@ -29,19 +29,6 @@ section {
     border-radius: 5px;
 }
     /** gestion police charactere bandeau titre page 1 end**/
-
-    /** gestion police charactere bandeau titre page 2 start**/
-    .section2 {
-        font-family: Arial, Helvetica, sans-serif, cursive;
-        font-size: 18px;
-        font-style: italic;
-        font-weight: lighter;
-        background-color: rgb(155, 157, 158);
-        padding: 10px;
-        margin: 5px;
-        border-radius: 5px;
-    }
-        /** gestion police charactere bandeau titre page 2 end**/
 
     /** gestion format bandeau titre page 1 start**/
 .tete {
@@ -66,9 +53,9 @@ h1 span {
     padding: 10px;
     border-radius: 5px
 }
-    /* page 1 boite coloeur du chef End */
+    /* page 1 boite couleur du chef End */
 
-    /* contenant photo start*/
+    /* contenant photo restau start*/
 #resto {
     display: flex;     
     justify-content: center;     
@@ -77,7 +64,7 @@ h1 span {
     width: 100%;
     border-radius: 10px;   
 }
-    /* contenant photo end*/
+    /* contenant photo restau end*/
 
     /*** test
 .* {
@@ -146,7 +133,7 @@ li a:hover {
 }
     /* menu deroulant end */
 
-/* grid-container*/
+/* grid-container Starter start*/
 .grid-test{
     display: grid;
     grid-template-columns: auto auto;
@@ -177,103 +164,41 @@ li a:hover {
       grid-area: texte;
       text-align: center;
       margin: 5px;
+      padding: 5px;
       align-self: center;
       background-color: lavenderblush;
       font-size: 18px;
       font-style: italic;
+      border-radius: 8px;
     }
-/* grid-container*/
-.grid-test1{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: 25px 456px;
-    grid-template-areas: 
-    "titre titre "
-    "image  texte ";
-    height: auto;
-    width: auto; 
-    }
-    
-    /*grid-item*/
-    
-    .monTitreTest1{
-      grid-area: titre;
-      font-size: 25px;
-      font-style: italic;
-      font-weight: lighter;
-    
-    }
-    
-    .imageContenant{
-      grid-area: image;
-      object-fit: contain;
-    }
-    
-    .textContenant{
-      grid-area: texte;
-      text-align: center;
-      margin: 5px;
-      align-self: center;
-      background-color: lavenderblush;
-      font-size: 18px;
-      font-style: italic;
-    }
+/* grid Starter end*/
+
+/* section copyright start*/
+   .copyright {
+    font-size: 10pt;
+    text-align: right;
+    padding-bottom: 10px;
+    color: black;
+}
+/* section copyright end*/
 
 
-    /* pour mettre image à gauche !!!!!!!*/
+
+    /* menu image start*/
     
 .menu img{
     height: 450px;
     width:  450px;
     border-radius: 8px;
 }
-/***
-#menu{
-  display: flex;
-  flex-direction: column;
-  height: auto;
-}
-    /* pour text à droite de l'image !!!!!!!*/
+ /* menu image end*/
 
-    /* mise en page menu start */
-    /****!!!!
-.boitetext{
-    display: flex;
-    background-color:lavenderblush;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    text-align:center;
-}
-      
-.boite{
-    display: flex;
-    align-items: center;
-    margin: 5px;
-      }
-      
-.fix-both{
-    align-items: flex-end;
-}
-      
-.titrerecette{
-    font-weight: bold;
-    text-decoration: underline;
-}
 
-    /* mise en page menu end */
 
-    /* section copyright start*/
-.copyright {
-    font-size: 10pt;
-    text-align: right;
-    padding-bottom: 10px;
-    color: black;
-}
-    /* section copyright end*/
+
 
     /**contact form section start**/
-/****
+
 form {
     text-align: center;
     margin-top: 0;
@@ -328,12 +253,6 @@ input, textarea {
 #contacts {
     text-align: center;
 }
- 
-.section1 {
-    font-family: Arial, Helvetica, sans-serif, cursive;
-    font-size: 18px;
-    font-style: italic;
-    font-weight: lighter;
-    text-align: center;
+
 }
     /**contact form section start**/

@@ -143,8 +143,7 @@ input[type=submit]:hover {
   }
 }
 
-
-
+/*****************************
 /* grid-container*/
 .grid-test{
 display: grid;
@@ -182,3 +181,40 @@ width: 1000px;
   font-size: 18px;
   font-style: italic;
 }
+
+#menu{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+    /* pour text à droite de l'image !!!!!!!*/
+
+    /* mise en page menu start */
+    /****!!!!
+.boitetext{
+    display: flex;
+    background-color:lavenderblush;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    text-align:center;
+}
+      
+.boite{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+      }
+      
+.fix-both{
+    align-items: flex-end;
+}
+      
+.titrerecette{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+    /* mise en page menu end */
+
+ 
