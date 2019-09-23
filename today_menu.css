@@ -1,13 +1,15 @@
-/** plus necessaire**/
 html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
-header {
-  font-family: arial, cursive;
+body {
+  background-color: rgb(155, 157, 158);
+}
+
+header {font-family: arial, cursive;
   font-size: 25px;
   font-style: italic;
   font-weight: lighter;
@@ -15,91 +17,66 @@ header {
   padding: 10px;
   margin: 5px;  
 }
-/** plus necessaire**/
-/**encore necessaire**/
-body {
-    background-color: rgb(155, 157, 158);
-    font-family: serif, cursive;
-    font-size: 18px;
-    font-style: italic;
-    font-weight: lighter;
-}
-/**encore necessaire**/
-/** plus necessaire**/
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-weight: bold;
-    font-size: 18px;
-}
-  
-  li {
-    float: left;
-}
-  
-  li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-}
-  
-  li a:hover {
-    background-color: darkgrey;
-}
-/** plus necessaire**/
-
-/* pour mettre image à gauche */
-#menu img{
-    height: 450px;
-    width:  450px;
-    border-radius: 8px;
-
-}
-
-#menu{
-  display: flex;
-  flex-direction: column;
-  height: auto;
-}
-/* pour text à droite de l'image */
-
-/***** ZONE DE TEST*/
-
-.boitetext{
-  display: flex;
-  background-color:lavenderblush;
-  justify-content: center;
-  align-items: center;
+/** gestion police charactere bandeau titre page 2 start**/
+.section2 {
+  font-family: Arial, Helvetica, sans-serif, cursive;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: lighter;
+  background-color: rgb(155, 157, 158);
+  padding: 10px;
   margin: 5px;
-  text-align:center;
+  border-radius: 5px;
 }
+  /** gestion police charactere bandeau titre page 2 end**/
 
+.titrerecette{
+  font-weight: bold;
+  
+  
+
+}
+}
 .boite{
   display: flex;
   align-items: center;
   margin: 5px;
-}
-
+    }
+    
 .fix-both{
   align-items: flex-end;
 }
 
-.titrerecette{
-  font-weight: bold;
-  text-decoration: underline;
+
+.plats123{
+    background-color:none;
+    width: auto;
+    height: auto;
+    text-align: center;
+    color: #CB7218;
+    font-size: 30px;
+    font-style: italic;
 }
-.copyright {
-  font-size: 10pt;
-  text-align: right;
-  padding-bottom: 10px;
-  color: black;
+.palts456 p{
+    text-align: center;
 }
-/***** ZONE DE TEST2**/
+
+img{
+  height: 450px;
+  width: 450px
+  background-color: white;
+}
+
+  /* section copyright start*/
+  .copyright {
+    font-size: 10pt;
+    text-align: right;
+    padding-bottom: 10px;
+    color: black;
+}
+    /* section copyright end*/
+
+/***** ZONE DE TEST2*
 
 * {
   box-sizing: border-box;
@@ -164,4 +141,44 @@ input[type=submit]:hover {
     width: 100%;
     margin-top: 0;
   }
+}
+
+
+
+/* grid-container*/
+.grid-test{
+display: grid;
+grid-template-columns: auto auto;
+grid-template-rows: 25px 456px;
+grid-template-areas: 
+"titre titre "
+"image  texte ";
+height: 1000px;
+width: 1000px;
+
+}
+
+/*grid-item*/
+
+.monTitreTest{
+  grid-area: titre;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: lighter;
+
+}
+
+.imageContenant{
+  grid-area: image;
+  object-fit: contain;
+}
+
+.textContenant{
+  grid-area: texte;
+  text-align: center;
+  margin: 5px;
+  align-self: center;
+  background-color: lavenderblush;
+  font-size: 18px;
+  font-style: italic;
 }

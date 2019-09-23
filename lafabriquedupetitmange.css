@@ -53,7 +53,7 @@ section {
 }
     /** gestion format bandeau titre page 1 end**/
 
-    /* page 1 boite coloeur du chef Start */
+    /* page 1 boite couleur du chef Start */
 .chef {
     font-size: 20px;
     color: darkblue;
@@ -79,7 +79,50 @@ h1 span {
 }
     /* contenant photo end*/
 
+    /*** test
+.* {
+  box-sizing: border-box;
+}
+  
+    
+/* Float four columns side by side */  /* grid-container*/
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 5px;
+  }
+  
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #444;
+    color: white;
+  }
+  
+  .fa {font-size:20px;}
+
     /* menu deroulant start */
+   
 ul {
     list-style-type: none;
     margin: 0;
@@ -88,36 +131,112 @@ ul {
     font-weight: bold;
     font-size: 18px;
 } 
-  li {
+li {
     float: left;
 } 
-  li a {
+li a {
     display: block;
     color: black;
     text-align: center;
     padding: 16px;
     text-decoration: none;
 } 
-  li a:hover {
+li a:hover {
     background-color: darkgrey;
 }
     /* menu deroulant end */
+
+/* grid-container*/
+.grid-test{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 25px 456px;
+    grid-template-areas: 
+    "titre titre "
+    "image  texte ";
+    height: auto;
+    width: auto; 
+    }
     
-/* pour mettre image à gauche */
-#menu img{
+    /*grid-item*/
+    
+    .monTitreTest{
+      grid-area: titre;
+      font-size: 25px;
+      font-style: italic;
+      font-weight: lighter;
+    
+    }
+    
+    .imageContenant{
+      grid-area: image;
+      object-fit: contain;
+    }
+    
+    .textContenant{
+      grid-area: texte;
+      text-align: center;
+      margin: 5px;
+      align-self: center;
+      background-color: lavenderblush;
+      font-size: 18px;
+      font-style: italic;
+    }
+/* grid-container*/
+.grid-test1{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 25px 456px;
+    grid-template-areas: 
+    "titre titre "
+    "image  texte ";
+    height: auto;
+    width: auto; 
+    }
+    
+    /*grid-item*/
+    
+    .monTitreTest1{
+      grid-area: titre;
+      font-size: 25px;
+      font-style: italic;
+      font-weight: lighter;
+    
+    }
+    
+    .imageContenant{
+      grid-area: image;
+      object-fit: contain;
+    }
+    
+    .textContenant{
+      grid-area: texte;
+      text-align: center;
+      margin: 5px;
+      align-self: center;
+      background-color: lavenderblush;
+      font-size: 18px;
+      font-style: italic;
+    }
+
+
+    /* pour mettre image à gauche !!!!!!!*/
+    
+.menu img{
     height: 450px;
     width:  450px;
     border-radius: 8px;
-
 }
-
+/***
 #menu{
   display: flex;
   flex-direction: column;
   height: auto;
 }
-/* pour text à droite de l'image */
+    /* pour text à droite de l'image !!!!!!!*/
+
     /* mise en page menu start */
+    /****!!!!
 .boitetext{
     display: flex;
     background-color:lavenderblush;
@@ -152,6 +271,9 @@ ul {
     color: black;
 }
     /* section copyright end*/
+
+    /**contact form section start**/
+/****
 form {
     text-align: center;
     margin-top: 0;
@@ -214,3 +336,4 @@ input, textarea {
     font-weight: lighter;
     text-align: center;
 }
+    /**contact form section start**/
