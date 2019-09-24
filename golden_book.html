@@ -42,9 +42,9 @@
 
         <!-- Form section start -->
             <div class="section1">
-                <h2><span>Golden Book</span></h2>
+                <h2 class="chef"><span>Golden Book feedback form</span></h2>
         
-                <svg class="face" height="100" width="100">
+                <svg class="face" height="200" width="200">
                     <circle cx="50" cy="50" r="50" fill="#FDD835"/>
                     <circle cx="30" cy="30" r="10" fill="#FFFFFF"/>
                     <circle cx="70" cy="30" r="10" fill="#FFFFFF"/>
@@ -53,13 +53,68 @@
                     <path d="M 30 70 q 20 20 40 0" stroke="#FFFFFF" stroke-width="5" fill="none" />
                 </svg>
              
-                <form>
-                    <input name="First name" placeholder="Name" type="text" required /><br/>
-                    <input name="email" placeholder="Email" type="email" required /><br/>
-                    <textarea name="message" placeholder="Message" required ></textarea>
-                    <input type="submit" value="SEND" class="submit" />
-                </form>
-            </div>
+            
+
+                <div class="container">
+                    <form action="/action_page.php">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">First Name</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="lname">Last Name</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-25">
+                                    <label for="Email">Email</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="Email" name="Email" placeholder="Your email..">
+                                </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="country">Country</label>
+                            </div>
+                            <div class="col-75">
+                                <select id="country" name="country">
+                                    <option value="australia">Australia</option>
+                                    <option value="canada">Canada</option>
+                                    <option value="usa">USA</option>
+                                    <option value="france">France</option>
+                                    <option value="belgium">Belgium</option>
+                                    <option value="nederland">Nederland</option>
+                                    <option value="switzerland">Switzerland</option>
+                                    <option value="newzealand">Newzealand</option>
+                                    <option value="brazil">Brazil</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="subject">Leave a feedback</label>
+                            </div>
+                            <div class="col-75">
+                                <textarea id="subject" name="Leave a feedback" placeholder="Write your feedback.."
+                                    style="height:200px"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            
+
         <!-- Form section end -->
 
 
