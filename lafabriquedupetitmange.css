@@ -46,8 +46,14 @@ section, .section2, .section1{
     color: darkblue;
     text-align: center;
     padding: 18px 0 18px 0;
-    margin: 0 0 10px 0;   
+    margin: 0 0 10px 0; 
 }
+.chef1 {
+    font-size: 20px;
+    color: darkblue;
+    margin: 0 0 10px 0; 
+}
+
 h1, h2 span {
     border: 4px solid darkblue;
     padding: 10px;
@@ -66,47 +72,51 @@ h1, h2 span {
 }
     /* contenant photo restau end*/
 
-    /*** test
-.* {
-  box-sizing: border-box;
-}
-  
+    /* menu image start*/
     
-/* Float four columns side by side */  /* grid-container*/
-.column {
-    float: left;
-    width: 50%;
-    padding: 0 5px;
-  }
-  
-  .row {margin: 0 -5px;}
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive columns */
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 10px;
+.menu img{
+    height: 450px;
+    width:  450px;
+    border-radius: 8px;
     }
-  }
-
-  /* Style the counter cards */
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    text-align: center;
-    background-color: #444;
-    color: white;
-  }
+     /* menu image end*/
+/* mise en page menu start */
   
-  .fa {font-size:20px;}
+.boitetext{
+    display: flex;
+    background-color:lavenderblush;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    text-align:center;
+    border-radius: 6px;
+}
+      
+.boite{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    border-radius: 10px;
+      }
+      
+.fix-both{
+    align-items: flex-end;
+    font-size: 20px;
+    color: darkblue;
+}
+      
+.titrerecette{
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+
+}
+
+    /* mise en page menu end */
+
+
+
+
 
     /* menu deroulant start */
    
@@ -132,46 +142,8 @@ li a:hover {
     background-color: darkgrey;
 }
     /* menu deroulant end */
+/***
 
-/* grid-container Starter start*/
-.grid-test{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: 25px 456px;
-    grid-template-areas: 
-    "titre titre "
-    "image  texte ";
-    height: auto;
-    width: auto; 
-    }
-    
-    /*grid-item*/
-    
-    .monTitreTest{
-      grid-area: titre;
-      font-size: 25px;
-      font-style: italic;
-      font-weight: lighter;
-    
-    }
-    
-    .imageContenant{
-      grid-area: image;
-      object-fit: contain;
-    }
-    
-    .textContenant{
-      grid-area: texte;
-      text-align: center;
-      margin: 5px;
-      padding: 5px;
-      align-self: center;
-      background-color: lavenderblush;
-      font-size: 18px;
-      font-style: italic;
-      border-radius: 8px;
-    }
-/* grid Starter end*/
 
 /* section copyright start*/
    .copyright {
@@ -184,21 +156,13 @@ li a:hover {
 
 
 
-    /* menu image start*/
-    
-.menu img{
-    height: 450px;
-    width:  450px;
-    border-radius: 8px;
-}
- /* menu image end*/
 
 
 
 
 
     /**contact form section start**/
-
+/*****
 form {
     text-align: center;
     margin-top: 0;
@@ -232,7 +196,7 @@ input, textarea, select {
     outline: none;
 }
 .face {
-    transform: scale(0.4);
+    transform: scale(0.6);
     margin: 0 auto;
     display: block;
     margin-top: -35px;

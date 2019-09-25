@@ -142,9 +142,41 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
+   /* pour text à droite de l'image !!!!!!!*/
 
-/*****************************
-/* grid-container*/
+    /* mise en page menu start */
+  
+.boitetext{
+    display: flex;
+    background-color:lavenderblush;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    text-align:center;
+}
+      
+.boite{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    background-color: blue;
+    border-radius: 10px;
+}
+      
+.fix-both{
+    align-items: flex-end;
+    background-color:green
+}
+      
+.titrerecette{
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: red
+}
+
+    /* mise en page menu end */
+ 
+/* grid-container*/ /****!!!!
 .grid-test{
 display: grid;
 grid-template-columns: auto auto;
@@ -157,7 +189,7 @@ width: 1000px;
 
 }
 
-/*grid-item*/
+/*grid-item*/ /****!!!!
 
 .monTitreTest{
   grid-area: titre;
