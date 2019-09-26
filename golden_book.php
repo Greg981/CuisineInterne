@@ -41,7 +41,7 @@
         </nav>
         <!-- navigation bar section end-->
 
-            <body>
+  <body>
 
         <!-- Form section start -->
             <div class="section1">
@@ -56,57 +56,141 @@
                     <path d="M 30 70 q 20 20 40 0" stroke="#FFFFFF" stroke-width="5" fill="none" />
                 </svg>
             </div>
+ 
+
+
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+<!-- Full-width slides/quotes -->
+<div class="mySlides">
+    <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+    <p class="author">- Thomas A. Edison</p>
+</div>
+
+<div class="mySlides">
+    <q>De passage &agrave; Avignon, j'ai eu le plaisir de venir manger chez Mr Cuisto,</br>
+        situ&eacute;en plein coeur du centre historique de la Fameuse cit&eacute; des Paoes.</br>
+        Compl&egrave;tement r&eacute;nov&eacute;, ce Restaurant, poss&egrave;de deux entr&eacute;es, offre des salles;</br>
+        assez spacieuses, tr&egrave;s confortables et surtout climatis&eacute;es:
+         halte &agrave; sugg&eacute;rer</q>
+    <p class="author">Jean-Paul<em>&nbsp;-TOULON, FRANCE</p>
+</div>
+
+
+<div class="mySlides">
+        <q>Acceuil tres sympatique,le personnel est tres serviable , les prix sont imbattable.</q>
+        <p class="author">Matthieu P OLORON (64)</p>
+</div>
+
+<div class="mySlides">
+    <q>Restaurant parfaitement situ&eacute; &agrave; proximit&eacute;</br>
+    du palais des papes et de la place de l'horloge.&nbsp;</br>
+    Personnel tres sympatique , d&eacute;co tres sympa,</br>
+    Menu du chef inoubliable.</q>
+    <p class="author">Sarah<em>&nbsp;- Toulouse</p>
+</div>
+
+<div class="mySlides">
+    <q>La proximit&eacute; de la gare, l'emplacement dans la rue pricipale,</br>
+    Le menu de groupe "Roast Piglet" une vrai tuerie!!!; en surprise du chef</br>
+    un disgestif offert pour mon anniversaire , c'etait tr&eacute;s sympa de leurs part.</q>
+    <p class="author">Claudine<em>&nbsp;- Corgoloin</p>
+</div>
+
+<!-- Next/prev buttons -->
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Dots/bullets/indicators -->
+<div class="dot-container">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
+<span class="dot" onclick="currentSlide(4)"></span>
+<span class="dot" onclick="currentSlide(5)"></span>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+
+
+
+
+
+
             
-<?php
+  <?php
+      // define variables and set to empty values
+      $fnameErr = $lnameErr = $emailErr = "";
+      $fname = $lname = $email = $comment =  "";
 
-
-
-// define variables and set to empty values
-$fnameErr = $lnameErr = $emailErr = "";
-$fname = $lname = $email = $comment =  "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["fname"])) {
-    $fnameErr = "First Name is required";
-  } else {
-    $fname = test_input($_POST["fname"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$fname)) {
-      $fnameErr = "Only letters and white space allowed";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      if (empty($_POST["fname"])) {
+      $fnameErr = "First Name is required";
+      } else {
+                $fname = test_input($_POST["fname"]);
+                // check if name only contains letters and whitespace
+                if (!preg_match("/^[a-zA-Z ]*$/",$fname)) {
+                $fnameErr = "Only letters and white space allowed";}  
+              }
+      if (empty($_POST["lname"])) {
+      $lnameErr = "Last Name is required";
+      } else {
+                $lname = test_input($_POST["lname"]);
+                // check if name only contains letters and whitespace
+                if (!preg_match("/^[a-zA-Z ]*$/",$lname)) {
+                $lnameErr = "Only letters and white space allowed";}  
+              }
+      if (empty($_POST["email"])) {
+      $emailErr = "Email is required";
+      } else {
+                $email = test_input($_POST["email"]);
+                // check if e-mail address is well-formed
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid email format";}
+              }
+      if (empty($_POST["comment"])) {
+      $comment = "";
+      } else {
+                $comment = test_input($_POST["comment"]);}
     }
-  }
-  if (empty($_POST["lname"])) {
-    $lnameErr = "Last Name is required";
-  } else {
-    $lname = test_input($_POST["lname"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$lname)) {
-      $lnameErr = "Only letters and white space allowed";
-    }
-  }
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";
-    }
-  }
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
 
-}
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
+    function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+    }
+  ?>
 
 <p><span class="error">* required field </span></p>
 <form method="post" action="test_php6.php">  

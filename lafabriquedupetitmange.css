@@ -203,7 +203,7 @@ input, textarea, select {
     margin: 0 auto;
     display: block;
     margin-top: -35px;
-    margin-bottom: -25px;
+    margin-bottom: -65px;
 }
 #contacts img {
     height: 50px;
@@ -318,6 +318,7 @@ input[type=submit]:hover {
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: green;
+    transition: background-color 1s ease;
   }
   
   /* Position the "next button" to the right */
@@ -325,7 +326,7 @@ input[type=submit]:hover {
     position: absolute;
     right: 0;
     border-radius: 3px 0 0 3px;
-    background-color: yellow;
+    background-color:violet;
   }
   
   /* On hover, add a black background color with a little bit see-through */
@@ -338,7 +339,6 @@ input[type=submit]:hover {
   .dot-container {
     text-align: center;
     padding: 20px;
-    background: #ddd;
   }
   
   /* The dots/bullets/indicators */
@@ -358,8 +358,10 @@ input[type=submit]:hover {
     background-color: #717171;
   }
   
-  /* Add an italic font style to all quotes */
-  q {font-style: italic;}
+  /* Add an italic font style and size to all quotes */
+  q {font-style: italic;
+    font-size: 25px
+}
   
   /* Add a blue color to the author */
   .author {color: darkblue;}
