@@ -33,7 +33,7 @@
                 <li><a href="lafabriquedupetitmange.html">home</a></li>   
                 <li><a href="today_menu.html">Today menu</a></li>
                 <li><a href="chef_speciality.html">Chef Speciality</a></li>
-                <li><a href="book_a_table.html">Book a table</a></li>
+                <li><a href="book_a_table.php">Book a table</a></li>
                 <li><a href="golden_book.php">Golden book </a></li>
                 <li><a href="testest5.php">test </a></li>
             </ul>
@@ -60,7 +60,7 @@
 
 
 
-        <!-- Slideshow container -->
+        <!-- Slideshow container Section Start -->
         <div class="slideshow-container">
 
 <!-- Full-width slides/quotes -->
@@ -112,7 +112,9 @@
 <span class="dot" onclick="currentSlide(4)"></span>
 <span class="dot" onclick="currentSlide(5)"></span>
 </div>
+<!-- slide show container Section End -->
 
+<!--scrip pour gerer le slide Start -->
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -141,7 +143,8 @@
       dots[slideIndex-1].className += " active";
     }
     </script>
-
+    <!--scrip pour gerer le slide End -->
+    
 
 
 

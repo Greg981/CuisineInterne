@@ -198,6 +198,7 @@ input, textarea, select {
     width: 70%;
     outline: none;
 }
+    /** Smiley Start**/
 .face {
     transform: scale(0.6);
     margin: 0 auto;
@@ -205,6 +206,7 @@ input, textarea, select {
     margin-top: -35px;
     margin-bottom: -65px;
 }
+    /** Smiley end**/
 #contacts img {
     height: 50px;
     width: 50px;
@@ -240,7 +242,7 @@ input[type=text], select, textarea {
 
 label {
   padding: 12px 12px 12px 0;
-  display: inline-block;
+  display: inline-block;  
 }
 
 input[type=submit] {
@@ -250,17 +252,18 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right;
+  
 }
 
 input[type=submit]:hover {
   background-color: #45a049;
+  float: center;
 }
 
 .container {
   border-radius: 5px;
-  
   padding: 20px;
+
 }
 
 .col-25 {
@@ -274,8 +277,11 @@ input[type=submit]:hover {
   width: 75%;
   margin-top: 6px;
 }
+.error {
+    color: red;
+}
 
-/* Clear floats after the columns */
+/** Clear floats after the columns **/
 .row:after {
   content: "";
   display: table;
@@ -290,9 +296,9 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
-/** test slide start**/
 
-/* Slideshow container */
+
+/* Slideshow container Start */
 .slideshow-container {
     position: relative;
   }
@@ -365,3 +371,4 @@ input[type=submit]:hover {
   
   /* Add a blue color to the author */
   .author {color: darkblue;}
+  /* Slideshow container End */
