@@ -1,0 +1,254 @@
+<!-- debut pour faire un slide start-->
+<a onclick="plusmoins(1)"></a>
+<a onclick="plusmoins(2)"></a>
+
+<div class="dot-container">
+  <div id="dot">
+
+  </div>
+</div>
+
+
+<script>
+function plusmoins(nombre){
+
+  let commentaire = document.getElementById("dot")
+
+  commentaire.innerHTML= "super commenter "// cible de ton commentaire + nombre
+}
+</script>
+<!-- debut pour faire un slide end-->
+
+
+<!--Grid test start-->
+
+/* grid-container*/ /****!!!!
+.grid-test{
+display: grid;
+grid-template-columns: auto auto;
+grid-template-rows: 25px 456px;
+grid-template-areas: 
+"titre titre "
+"image  texte ";
+height: 1000px;
+width: 1000px;
+
+}
+
+/*grid-item*/ /****!!!!
+
+.monTitreTest{
+  grid-area: titre;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: lighter;
+
+}
+
+.imageContenant{
+  grid-area: image;
+  object-fit: contain;
+}
+
+.textContenant{
+  grid-area: texte;
+  text-align: center;
+  margin: 5px;
+  align-self: center;
+  background-color: lavenderblush;
+  font-size: 18px;
+  font-style: italic;
+}
+
+#menu{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+    /* pour text à droite de l'image !!!!!!!*/
+
+    /* mise en page menu start */
+    /****!!!!
+.boitetext{
+    display: flex;
+    background-color:lavenderblush;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    text-align:center;
+}
+      
+.boite{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+      }
+      
+.fix-both{
+    align-items: flex-end;
+}
+      
+.titrerecette{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+    /* mise en page menu end */
+
+    /* grid-container*/ /****!!!!
+    .grid-test{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 25px 456px;
+    grid-template-areas: 
+    "titre titre "
+    "image  texte ";
+    height: 1000px;
+    width: 1000px;
+    
+    }
+    
+    /*grid-item*/ /****!!!!
+    
+    .monTitreTest{
+      grid-area: titre;
+      font-size: 25px;
+      font-style: italic;
+      font-weight: lighter;
+    
+    }
+    
+    .imageContenant{
+      grid-area: image;
+      object-fit: contain;
+    }
+    
+    .textContenant{
+      grid-area: texte;
+      text-align: center;
+      margin: 5px;
+      align-self: center;
+      background-color: lavenderblush;
+      font-size: 18px;
+      font-style: italic;
+    }
+    
+    #menu{
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+        /* pour text à droite de l'image !!!!!!!*/
+    
+        /* mise en page menu start */
+        /****!!!!
+    .boitetext{
+        display: flex;
+        background-color:lavenderblush;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        text-align:center;
+    }
+          
+    .boite{
+        display: flex;
+        align-items: center;
+        margin: 5px;
+          }
+          
+    .fix-both{
+        align-items: flex-end;
+    }
+          
+    .titrerecette{
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    
+        /* mise en page menu end */
+    
+     <!--Grid test end-->
+ 
+
+<!-- Verif erreur code php-->
+       
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+?>
+<!-- Verif erreur code php-->
+
+
+<!---contact form php start-->
+        
+<?php
+      // define variables and set to empty values
+      $NomErr = $PrenomErr = $telmobileErr = $emailErr = "";
+      $Nom = $Prenom = $adresse = $telfixe = $telmobile = $email = $comment =  "";
+
+    // Vérifier que les données soient envoyées par un POST
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      if (empty($_POST["Nom"])) {
+        $NomErr = "First Name is required";
+      } else {
+          $Nom = test_input($_POST["Nom"]);
+          // check if name only contains letters and whitespace
+          if (!preg_match("/^[a-zA-Z ]*$/",$Nom)) {
+          $NomErr = "Only letters and white space allowed";}  
+      }
+    
+      if (empty($_POST["Prenom"])) {
+        $PrenomErr = "Last Name is required";
+      } else {
+                $Prenom = test_input($_POST["Prenom"]);
+                // check if name only contains letters and whitespace
+                if (!preg_match("/^[a-zA-Z ]*$/",$Prenom)) {
+                $PrenomErr = "Only letters and white space allowed";}  
+        }
+     
+      if (empty($_POST["adresse"])) {
+          $adresse = "";
+      } else {
+          $adresse = test_input($_POST["adresse"]);
+        }
+      
+      if (empty($_POST["telfixe"])) {
+        $telfixe = "";
+      } else {
+        $telfixe = test_input($_POST["telfixe"]);}
+      }
+
+      if (empty($_POST["telmobile"])) {
+          $telmobileErr = "mobile phone number is required";
+      } else {
+          $telmobile = test_input($_POST["telmobile"]);
+          // check if number only contains number
+          if (!preg_match(" \^(\d\d\s){4}(\d\d)$\ ",$telmobile)) {
+          $telmobileErr = "Only number allowed";
+        }
+
+      if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+      } else {
+          $email = test_input($_POST["email"]);
+          // check if e-mail address is well-formed
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          $emailErr = "Invalid email format";}
+      }
+      
+          if (empty($_POST["comment"])) {
+        $comment = "";
+      } else {
+        $comment = test_input($_POST["comment"]);
+      }
+    }
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+    
+  ?>
+<!--contact form php end-->

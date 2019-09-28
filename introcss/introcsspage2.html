@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equip="X-UA-Compatible" content="ie=edge">
+        <title>intro_css</title>
+        <link href="introcss.css" rel="stylesheet">
+        
+    </head>
+    
+   <body> 
+            <!-- header start -->
+
+        <header class="tete">
+         
+                <div id="header" class="section">
+    
+                     <!--photo logo start-->
+                    <img id="logo" src="photo/logocss.jpeg" border="5px" >
+                    <!--photo logo end-->
+                </div>
+                   
+        </header>
+            <!-- header end -->
+        
+        
+        <!-- navigation bar section start-->
+        <nav>
+                <ul>
+                    <li><a href="introcsspage1.html">home</a></li>   
+                    <li><a href="introcsspage2.html">Page2</a></li>
+                    <li><a href="introcsspage3.html">Page3</a></li>
+                    <li><a href="book_a_table.php">Book a table</a></li>
+                    <li><a href="golden_book.php">Golden book </a></li>
+                    <li><a href="test_slider.php">test</a></li>
+                </ul>
+
+            </nav>
+        <!-- navigation bar section end-->
+
+
+    <div class="section1">
+        <p><br>Prenons l'exemple de ce texte : que vais je bien écrire???</br></p>
+
+
+                    
+                    <p>Imaginons que nous voulons: <u>le souligner</u>,<b> le mettre en gras</b>,<font size="+3"> agrandir la police de caractère</font></br><font color="red"> et le mettre en rouge</font> </br>
+                      </br>
+                        naturellement tout ça en meme temps sinon ça serait pas marrant</br>
+                     </br>
+                        <font color="red"><font size="+3"><u><b>Que vais je bien écrire???</b></u></font></font> </br>
+                    </p>
+                 
+                
+           
+
+
+           <p>Plusieurs moyens s'offrent à nous : <ol class="disc">
+                <li class="type">via HTML:</li></p>
+               
+            <p>La façon de proceder va etre de definir chaque éléments en code HTML :</br></p>
+                <!-- facon simple afficher ligne de code sous HTML start-->  
+            
+            <p>
+                <div class=texthtml>
+                    Ce qui donne:
+                    </br></br>
+                        &lt;u&gt;pour le souligner&lt;/u&gt; ; &lt;b&gt; pour le mettre en gras&lt;/b&gt; ; &lt;font size="+3"&gt; pour agrandir la police de caractère&lt;/font&gt; ; &lt;font color="red"&gt;pour et le mettre en rouge&lt;/font&gt;</br>      
+            </p>
+    </div>
+                <!-- facon simple afficher ligne de code sous HTML end-->
+                      <p>  Pas des plus convivial non ??? On se retrouve vite avec une ligne de code tres compliqué à gérer </br>
+                        Et ce pour une seule ligne écrite....</br>
+                        Voyons donc l'autre méthode</p>
+
+                
+
+                    <li class="type">Via CSS:</li>
+
+            <p>La façon de proceder va etre la suivante :
+                <ol>
+                <li class="type"></li>  de créer une div class (une boite) en HTML que l'on nomme:(texthtml1)</br>
+                    <div class=texthtml>
+                        Ce qui donne:
+                        </br>
+                        <div class="texthtml2">
+                            </br>
+                            </br>
+                        </div>  
+                    </div>     
+            </p>
+                    
+                <li class="type"></li> d'écrire le meme texte dans cette div 
+                <div class=texthtml>
+                        Ce qui donne:
+                    <div class="texthtml2">
+                        &lt;div class=texthtml1&gt;
+                    </br>
+                    </br>
+                        &lt;p&gt; Que vais je bien écrire????&lt;/p&gt;
+                        </br>
+                        </br>
+                        &lt;/div&gt;
+                    
+                    </br>
+                    </div>
+                </div> 
+                <li class="type"></li> de créer le nom de cette div (texthtml1) pour l'exemple dans CSS et lui donner les attributs requis      
+                <div class="texthtml">
+                        Ce qui donne en HTML:
+                        </br>
+                    </br>
+                    <div class="texthtml2">    
+                             &lt;div class=texthtml1&gt;</br>
+                                <div class=texthtml1>
+                            
+                                 &lt;p&gt; Que vais je bien écrire????&lt;/p&gt;
+                                </br>
+                                </div>
+                        </br>
+                    
+                            &lt;/div&gt;</br>
+                    </div> 
+                </div> 
+                 <li class="type"></li>   et ensuite en langage CSS: lui donner les attributs requis      
+                <div class="texthtml">
+                            Ce qui donne en CSS:
+                            </br></br>
+                            .texthtml1 {</br>
+                                font-family: Arial, Helvetica, sans-serif, cursive;</br>
+                                font-size: 25px;</br>
+                                text-decoration: underline;</br>
+                                font-weight: bold;</br>
+                                color: red;</br>
+                                background-color:rgb(148, 132, 132);</br>
+                                padding: 10px;</br>
+                                margin: 5px;</br>
+                            }
+                        </p>    
+                </div> 
+                <p>Vous imaginez pas combien de div j'ais créé pour cette simple page ....</br>
+                L'art et la manière de passer son week end à faire une présentation</p>        
+            </ol>
+           </ol>
+        </p>
+         
+
+                </div>
+
+       <div class="quote"><p>"Live your dreams, do not dream your life"</p></div>
+
+   
+       <!-- footer start -->
+
+       
+       <!-- footer end -->
+           <div class="copyright">
+               &copy; 2019 Greg. All rights reserved.
+           </div>
+
+
+   </body>
+</html>
