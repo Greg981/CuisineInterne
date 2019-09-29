@@ -45,8 +45,8 @@ section {
         display: flex;     
         justify-content: center;     
         align-items: center; 
-        height: 300px;    
-        width: 100%;
+        height: 300px; 
+        margin: 50px;   
         border-radius: 10px;   
     }
         /* contenant photo logo css end*/
@@ -87,9 +87,14 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    background-color: rgb(134, 91, 145);
     overflow: hidden;
+    top: 0;/* Set the navbar to the top */
+    position: fixed;/* Set the navbar to fixed position */
+    width: 100%;/* Set the navbar full screen size */
     font-weight: bold;
     font-size: 18px;
+    border-radius: 5px;
 } 
 li {
     float: left;
@@ -104,6 +109,10 @@ li a {
 li a:hover {
     background-color: darkgrey;
 }
+.onglet-actif {
+    background-color: #4CAF50; /*highlight onglet actif*/
+}
+
     /* menu deroulant end */
 
 /* OL list page 2 start */
@@ -145,11 +154,11 @@ li a:hover {
     border-radius: 5px;
 }
 .texthtml1 {
-    font-family: Arial, Helvetica, sans-serif, cursive;
-    font-size: 25px;
-    text-decoration: underline;
-    font-weight: bold;
-    color: red;
+    font-family: Arial, Helvetica, sans-serif, cursive;/*defini la police de caractère*/
+    font-size: 25px;/*defini la taille de la police de caractère*/
+    text-decoration: underline;/*souligne le texte*/
+    font-weight: bold; /*mets le texte en gras*/
+    color: red; /*mets le texte en rouge*/
     background-color:rgb(148, 132, 132);
     padding: 10px;
     margin: 5px;
@@ -163,15 +172,91 @@ li a:hover {
     margin: 5px;
     border-radius: 5px;
 }
-.texthtml2 {
+.texthtml3 {
     font-family: Arial, Helvetica, sans-serif, cursive;
-    font-size: 18px;;
+    font-size: 20px;
+    font-weight: bold;
     background-color:rgb(148, 132, 132);
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
 }
 /* text html page 2 end */
+
+/* Slideshow container Start */
+.slideshow-container {
+    position: relative;
+  }
+  
+  /* Slides */
+  .mySlides {
+    display: none;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #888;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: green;
+    transition: background-color 1s ease;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    background-color:violet;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+  }
+  
+  /* The dot/bullet/indicator container */
+  .dot-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: rgb(241, 169, 169);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  /* Add a background color to the active dot/circle */
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Add an italic font style and size to all quotes */
+  q {font-style: italic;
+    font-size: 25px
+}
+  
+  /* Add a blue color to the author */
+  .author {color: darkblue;}
+  /* Slideshow container End */
 
     /* section copyright start*/
 .copyright {

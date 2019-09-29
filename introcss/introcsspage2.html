@@ -26,12 +26,12 @@
         
         
         <!-- navigation bar section start-->
-        <nav>
+            <nav>
                 <ul>
-                    <li><a href="introcsspage1.html">home</a></li>   
-                    <li><a href="introcsspage2.html">Page2</a></li>
+                    <li><a href="introcsspage1.html">Page1</a></li>   
+                    <li><a class="onglet-actif" href="introcsspage2.html">Page2</a></li>
                     <li><a href="introcsspage3.html">Page3</a></li>
-                    <li><a href="book_a_table.php">Book a table</a></li>
+                    <li><a href="introcsspage4.html">Page4</a></li>
                     <li><a href="golden_book.php">Golden book </a></li>
                     <li><a href="test_slider.php">test</a></li>
                 </ul>
@@ -41,15 +41,13 @@
 
 
     <div class="section1">
-        <p><br>Prenons l'exemple de ce texte : que vais je bien écrire???</br></p>
-
-
+        <p><br>Prenons l'exemple de ce texte : Comment vais je l'écrire????</br></p>
                     
                     <p>Imaginons que nous voulons: <u>le souligner</u>,<b> le mettre en gras</b>,<font size="+3"> agrandir la police de caractère</font></br><font color="red"> et le mettre en rouge</font> </br>
                       </br>
                         naturellement tout ça en meme temps sinon ça serait pas marrant</br>
                      </br>
-                        <font color="red"><font size="+3"><u><b>Que vais je bien écrire???</b></u></font></font> </br>
+                   <font color="red"><font size="+3"><u><b>Comment vais je l'écrire????</b></u></font></font> </br>
                     </p>
                  
                 
@@ -57,7 +55,7 @@
 
 
            <p>Plusieurs moyens s'offrent à nous : <ol class="disc">
-                <li class="type">via HTML:</li></p>
+                <li class="type">via HTML uniquement:</li></p>
                
             <p>La façon de proceder va etre de definir chaque éléments en code HTML :</br></p>
                 <!-- facon simple afficher ligne de code sous HTML start-->  
@@ -66,8 +64,11 @@
                 <div class=texthtml>
                     Ce qui donne:
                     </br></br>
-                        &lt;u&gt;pour le souligner&lt;/u&gt; ; &lt;b&gt; pour le mettre en gras&lt;/b&gt; ; &lt;font size="+3"&gt; pour agrandir la police de caractère&lt;/font&gt; ; &lt;font color="red"&gt;pour et le mettre en rouge&lt;/font&gt;</br>      
-            </p>
+                        &lt;u&gt;pour le souligner&lt;/u&gt; ; &lt;b&gt; pour le mettre en gras&lt;/b&gt; ; &lt;font size="+3"&gt; pour agrandir la police de caractère&lt;/font&gt; ; &lt;font color="red"&gt;pour et le mettre en rouge&lt;/font&gt;</br></br>    
+                        
+                        &lt;font color="red"&gt;&lt;font size="+3"&gt;&lt;u&gt;&lt;b&gt;Comment vais je l'écrire????&lt;/b&gt;&lt;/u&gt;&lt;/font&gt;&lt;/font&gt; </br>
+            
+                </p>
     </div>
                 <!-- facon simple afficher ligne de code sous HTML end-->
                       <p>  Pas des plus convivial non ??? On se retrouve vite avec une ligne de code tres compliqué à gérer </br>
@@ -76,29 +77,31 @@
 
                 
 
-                    <li class="type">Via CSS:</li>
+                    <li class="type">Tout en utilisant le language HTML pour créer nos boites (div) et combinant le CSS pour gérer les attributs et styles de nos boites:</li>
 
             <p>La façon de proceder va etre la suivante :
                 <ol>
-                <li class="type"></li>  de créer une div class (une boite) en HTML que l'on nomme:(texthtml1)</br>
+                <li class="type"></li>  de créer en HTML une div class (une boite) que j'ai nommé: texthtml1</br>
                     <div class=texthtml>
-                        Ce qui donne:
+                        Ce qui donne: (j'avoue j ais mis de la couleur sinon ca ressemble à rien)
                         </br>
                         <div class="texthtml2">
+                                &lt;div class=texthtml1&gt;
                             </br>
                             </br>
+                            &lt;/div&gt;
                         </div>  
                     </div>     
             </p>
                     
-                <li class="type"></li> d'écrire le meme texte dans cette div 
+                <li class="type"></li> d'écrire notre texte dans cette div 
                 <div class=texthtml>
-                        Ce qui donne:
+                        Ce qui donne en HTML:
                     <div class="texthtml2">
                         &lt;div class=texthtml1&gt;
                     </br>
                     </br>
-                        &lt;p&gt; Que vais je bien écrire????&lt;/p&gt;
+                        &lt;p&gt; Comment vais je l'écrire????&lt;/p&gt;
                         </br>
                         </br>
                         &lt;/div&gt;
@@ -106,41 +109,47 @@
                     </br>
                     </div>
                 </div> 
-                <li class="type"></li> de créer le nom de cette div (texthtml1) pour l'exemple dans CSS et lui donner les attributs requis      
+                <li class="type"></li> de créer le nom de cette div (texthtml1) dans CSS et lui donner les attributs requis      
                 <div class="texthtml">
-                        Ce qui donne en HTML:
+                        Ce qui donne en CSS:
                         </br>
                     </br>
-                    <div class="texthtml2">    
-                             &lt;div class=texthtml1&gt;</br>
-                                <div class=texthtml1>
-                            
-                                 &lt;p&gt; Que vais je bien écrire????&lt;/p&gt;
-                                </br>
-                                </div>
-                        </br>
+                    .texthtml1 {</br></br>
+                        font-family: Arial, Helvetica, sans-serif, cursive;</br>
+                        font-size: 25px;</br>
+                        text-decoration: underline;</br>
+                        font-weight: bold;</br>
+                        color: red;</br>
+                        background-color:rgb(148, 132, 132);</br>
+                        padding: 10px;</br>
+                        margin: 5px;</br>
+                    }
                     
-                            &lt;/div&gt;</br>
-                    </div> 
                 </div> 
-                 <li class="type"></li>   et ensuite en langage CSS: lui donner les attributs requis      
+                 <li class="type"></li>   et ensuite miracle nous voyons que les attributs entrée en CSS mettent en forme  notre texte qui est contenu dans notre div.  
                 <div class="texthtml">
-                            Ce qui donne en CSS:
-                            </br></br>
-                            .texthtml1 {</br>
-                                font-family: Arial, Helvetica, sans-serif, cursive;</br>
-                                font-size: 25px;</br>
-                                text-decoration: underline;</br>
-                                font-weight: bold;</br>
-                                color: red;</br>
-                                background-color:rgb(148, 132, 132);</br>
-                                padding: 10px;</br>
-                                margin: 5px;</br>
-                            }
+                            Ce qui donne comme comme résultat:
+                            </br>
+                            </br>
+                            <div class="texthtml2">    
+                                   
+                                       <div class=texthtml1>
+                                   
+                                         Comment vais je l'écrire????
+                                       </br>
+                                       </div>
+                               </br>
+                           
+                                
+                           </div> 
                         </p>    
                 </div> 
-                <p>Vous imaginez pas combien de div j'ais créé pour cette simple page ....</br>
-                L'art et la manière de passer son week end à faire une présentation</p>        
+                <p>Vous imaginez pas combien de div j'ais créé pour cette simple page . L'art et la manière de passer son week end à faire une présentation....</br></p> 
+               <div class="texthtml3">
+                <u>Le point à retenir :</u></br></br>
+                 Les feuilles de style sont destinées à séparer la structure de la page et sa mise en forme.</br> 
+                Elles permettent des effets impressionnants impossibles à réaliser en HTML.
+              </div>      
             </ol>
            </ol>
         </p>
