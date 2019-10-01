@@ -1,0 +1,115 @@
+body {
+    background-color: white;
+    padding-left: 20px;
+}
+      /** gestion format bandeau titre page 1 start**/
+      .tete {
+        display: flex;     
+        justify-content: center;     
+        align-items: center;
+        max-width:  100%;
+        flex-direction: column;
+        background-color: chartreuse,
+    }
+        /** gestion format bandeau titre page 1 end**/
+ /** gestion police charactere section start**/
+ section {
+    font-family: Arial, Helvetica, sans-serif, cursive;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: lighter;
+    padding: 10px;
+    margin: 5px;
+    border-color: black;
+    border-left: 1px;
+    border-top: 1px;
+    border-bottom: 1px;
+    background-color: blue;
+
+}
+.chef {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    padding: 18px 0 18px 0;
+    margin: 0 0 10px 0; 
+    background-color: blueviolet;
+}
+    /** gestion police charactere section end**/
+
+     /* contenant photo poussin start*/
+ #logo1 {
+    display: flex;     
+    justify-content: center;     
+    margin: 10px;
+    border-radius: 10px;   
+}
+    /* contenant photo poussin end*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(91, 90, 92);
+    overflow: hidden;
+    width: 100%;/* Set the navbar full screen size */
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+} 
+li {
+    float: right;
+} 
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+} 
+li a:hover {
+    background-color: darkgrey;
+}
+
+
+    /* menu deroulant end */
+
+    
+        /* mise en page menu start */
+      
+    .boitetext{
+        display: flex;
+        background-color:lavenderblush;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        text-align:center;
+        border-radius: 6px;
+    }
+          
+    .boite{
+        display: flex;
+        align-items: center;
+        margin: 5px;
+        background-color: dodgerblue;
+          }
+          
+    .fix-both{
+        display:  flex-end;
+        font-size: 20px;
+        color: black;
+        background-color: darkgreen;
+    }
+
+    #menu img{
+        align-items: right;
+
+
+    }
+    .chef1 {
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        background-color: dodgerblue;
+    }
+        /* mise en page menu end */
