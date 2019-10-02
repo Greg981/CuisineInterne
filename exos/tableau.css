@@ -13,28 +13,8 @@ body {
     }
         /** gestion format bandeau titre page 1 end**/
  /** gestion police charactere section start**/
- section {
-    font-family: Arial, Helvetica, sans-serif, cursive;
-    font-size: 18px;
-    font-style: italic;
-    font-weight: lighter;
-    padding: 10px;
-    margin: 5px;
-    border-color: black;
-    border-left: 1px;
-    border-top: 1px;
-    border-bottom: 1px;
-    background-color: blue;
+ 
 
-}
-.chef {
-    font-size: 20px;
-    color: black;
-    text-align: center;
-    padding: 18px 0 18px 0;
-    margin: 0 0 10px 0; 
-    background-color: blueviolet;
-}
     /** gestion police charactere section end**/
 
      /* contenant photo poussin start*/
@@ -77,23 +57,9 @@ li a:hover {
     
         /* mise en page menu start */
       
-    .boitetext{
-        display: flex;
-        background-color:lavenderblush;
-        justify-content: center;
-        align-items: center;
-        margin: 5px;
-        text-align:center;
-        border-radius: 6px;
-    }
+   
           
-    .boite{
-        display: flex;
-        align-items: center;
-        margin: 5px;
-        background-color: dodgerblue;
-          }
-          
+   
     .fix-both{
         display:  flex-end;
         font-size: 20px;
@@ -106,10 +72,58 @@ li a:hover {
 
 
     }
-    .chef1 {
+    
+        /* mise en page menu end */
+
+
+
+    /*mise en page block 1 start*/
+    .block,.block1 {
+        font-family: Arial, Helvetica, sans-serif, cursive;
+        font-size: 18px;
+        font-style: italic;
+        font-weight: lighter;
+        padding: 10px;
+        margin: 5px;
+        border-color: black;
+        display: flex;
+        border: 1px solid black;
+        
+    }
+
+    .block3{
+        font-family: Arial, Helvetica, sans-serif, cursive;
+        font-size: 18px;
+        font-style: italic;
+        font-weight: lighter;
+        padding: 10px;
+        margin: 5px;
+        border-color: black;
+        display: flex;
+        border: 1px solid black;
+        flex-direction: column
+    }
+
+    .boitetext, .boitetext1{
+        margin: 5px;
+        text-align: justify;
+        border-radius: 6px;
+       
+    }
+     /* contenant photo poussin start*/
+      
+    .chef {
         font-size: 20px;
         color: black;
         text-align: center;
-        background-color: dodgerblue;
+        padding: 18px 0 18px 0;
+        margin: 0 0 10px 0; 
     }
-        /* mise en page menu end */
+  
+    .boitetext2 {
+        display: flex;
+    }
+    #logo2 { 
+        float: left;
+        }
+       /*mise en page block 3 end*/

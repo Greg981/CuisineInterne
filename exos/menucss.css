@@ -1,0 +1,96 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: rgb(65, 112, 136) ;
+}
+
+header {font-family: arial, cursive;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: lighter;
+    background-color: rgb(65, 112, 136);
+    padding: 10px;
+    margin: 5px;  
+}
+
+ /* menu deroulant start */
+   
+ ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: inline;
+  }
+
+li a:hover {
+    background-color: darkgrey;
+}
+        
+            /* menu deroulant end */
+
+            #menu{
+                font-size: 24px;
+                margin-left: 700px;
+                text-align: center;
+                font-family: 'Righteous'cursive;
+            }
+            #menu ul{
+                margin: 0px;
+                padding: 0px;
+                list-style-type: none;
+                text-align: center;
+            }
+            #menu li{
+                float: left;
+                margin: auto;
+                padding: 15px;
+                text-decoration: none;
+            }
+            #menu li a{
+                display: block;
+                width: 100px;
+                text-decoration: underline;
+                color: red;
+                padding: 5px;
+                }
+            
+            #sousmenu li a{
+                color: black;
+                text-decoration: none;
+                display: flex;
+            }
+            
+             #menu li a:hover{
+            
+             } 
+             #menu ul li ul{
+                 display: none;
+             }
+             #menu ul li:hover ul{
+                 display: block;
+             }
+             #menu  li:hover ul li{
+                 float: flex;
+             }
+             #menu li ul{
+                 position: absolute;
+            
+             }
+             #menu{
+                 height: 50px;
+             }
+             #menu a{
+                 text-decoration: none;
+            
+             }
+             #menu ul li a::after{
+                 filter:alpha(opacity=10);
+             }
