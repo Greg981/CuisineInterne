@@ -1,0 +1,20 @@
+body{
+    background-color: black;
+}
+h1{
+    color:white;
+   text-align: center
+}
+h2{
+    background-color: rgb(165, 146, 146);  
+    margin: 0px;
+}
+section{
+    background-color: white;
+    color: black;
+}
+aside{
+    background-color: white;
+    color: black;
+    float:left;
+}
