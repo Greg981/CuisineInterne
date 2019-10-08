@@ -1,0 +1,62 @@
+html,body,section{
+    background-color: black;
+    color: white;
+}
+
+h1,h2{
+    text-align: center;
+}
+section article{
+    float:left;
+    min-width:10em;
+    min-height:10em;
+    background-color:#5f6670;
+    margin:1.3em;
+    padding:1.3em;
+}
+section article h2{
+    width:100%;
+    line-height:15em;
+    text-align:center;
+}
+section article:nth-child(1){
+    width:30%;
+}
+section article:nth-child(2){
+    width:45%;
+    background:lightskyblue;
+}
+section article:nth-child(3){
+    width:35%;
+    margin-left:10%;
+}
+section article:nth-child(4){
+    width:35%;
+}
+section article:nth-child(5){
+    width:25%;
+}
+section article:nth-child(6){
+    width:25%;
+    float: right;
+}
+section article:nth-child(7){
+    max-width: 2em;
+    min-width: 2em;
+    background:lightskyblue;
+    position: fixed;
+    top:0;
+    right: 0;
+}
+
+
+
+footer{
+    position: fixed;
+    bottom:0;
+    left:45%;
+    align-items: center;
+    background:lightskyblue;
+    width: 12em;
+    height:3em;
+}

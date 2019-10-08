@@ -1,0 +1,60 @@
+body {
+    background-color: white;
+    padding-left: 20px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(91, 90, 92);
+    overflow: hidden;
+    width: 100%;/* Set the navbar full screen size */
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+} 
+li {
+    float: right;
+} 
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+} 
+li a:hover {
+    background-color: darkgrey;
+}
+
+
+    /* menu deroulant end */
+h2 {
+font-size: 20px;
+color: black;     
+padding: 18px 0 18px 0;
+margin: 0 0 10px 0; 
+background-color: blueviolet;
+}
+    
+section {
+display: flex;
+font-family: Arial, Helvetica, sans-serif, cursive;
+font-size: 18px;
+padding: 10px;
+margin: 5px;
+border-color: black;
+border-left: 1px;
+border-top: 1px;
+border-bottom: 1px;
+background-color: blue;
+} 
+
+
+img{
+    float:right;
+}
+  
+.poussin1{
+    float:left;
+}
