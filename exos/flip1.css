@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;   
+}
+
+img{
+    height: 80%;
+    width: 80%;
+    padding-left: 1em;
+    padding-top: 1em; 
+}
+h1{
+    text-align: center;
+}
+
+
+body {
+    background: purple;
+    display: flex;
+    justify-content: space-evenly;
+    color: black;
+}
+
+.premier,
+.deuxieme,
+.troisieme,
+.quatrieme {
+    background-color: transparent;
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    margin: auto;
+    margin-top: 10%;
+}
+
+/* position the front and back side CONTAINER */
+.flip-inside{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* horizontal flip when hover*/
+.premier:hover .flip-inside,
+.troisieme:hover .flip-inside {
+    transform: rotateX(180deg);
+    
+}
+
+
+.deuxieme:hover .flip-inside,
+.quatrieme:hover .flip-inside {
+    transform: rotateY(180deg);
+}
+
+
+
+/* Positioning of front and back side */
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: white;
+}
+
+.premier .back{ 
+    transform: rotateX(180deg)
+}
+
+
+.deuxieme .back{ 
+    transform: rotateY(180deg);
+}
+
+
+.troisieme .back{
+    transform: rotateX(180deg);
+}
+
+.quatrieme .back{  
+    transform: rotateY(180deg);
+}
