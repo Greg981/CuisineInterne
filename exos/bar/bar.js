@@ -7,6 +7,9 @@ ajouter.addEventListener('click', ajout);// creation de l'ajout
 function alerte() {
     alert('bonjour Comment allez vous ?'); //message du pop up
 }
+
+
+
 function ajout() { // boite ajout paragrhape
     let para = document.createElement('p');
     para.textContent = 'Le paragraphe a bien été ajouté, ça prouve que ca fonctionne ';
