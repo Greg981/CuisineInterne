@@ -1,0 +1,22 @@
+#text{
+	font-size:2em;
+    color:red;
+    vertical-align: middle;
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 300px;
+    height: 150px;
+}
+
+#example
+{
+   text-align: center;
+   overflow: hidden;
+   position: relative;;
+   left: 0px;
+   top: 0px;
+   width: 300px;
+   height: 150px;
+}
