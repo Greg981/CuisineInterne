@@ -6,7 +6,7 @@ let a;
     }
  } while (isNaN(a) || a%1!==0);
  
- document.write("<h4>La table de multiplication du nombre: "+a+"</h4>")
+ document.write("<h4>Ceci est la table de multiplication du nombre: "+a+"</h4>")
  document.write("<table border >");
 
  for(let i=1;i<=10;i++){
