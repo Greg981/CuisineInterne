@@ -1,6 +1,6 @@
-document.write("<h1>!!! TOURNEZ MANEGE !!!</h1>");
+document.write("<h1>Lancons le manège</h1>");
 
-let nbTicket = Number(prompt("Nombre de ticket"));
+let nbTicket = Number(prompt("Combien de ticket??"));
 console.log("Le manège démarre ");
 document.write("Le manège démarre <br>");
 
