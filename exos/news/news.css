@@ -1,0 +1,57 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color:rgb(65, 112, 136);
+}
+
+main {
+    display:flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+section{
+    width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+    overflow: hidden;
+}
+
+section article {
+    margin: 5px;
+    height: 250px;
+    overflow: hidden;
+    transition: all 3s ease-in-out;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+/**
+section article:nth-child(even):hover {
+    background-position: 100% 75%;
+    cursor: pointer;
+}
+
+section article:nth-child(odd):hover {
+    background-position: 0% 25%;
+    cursor: pointer;
+}
+
+legend {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFF;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    padding: 10px 20px;
+    margin-top: 250px;
+}
+
+
+article{
+height: 12vh;
+
+}
