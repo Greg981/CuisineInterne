@@ -29,8 +29,18 @@ section article {
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
+section article legend {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFF;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    padding: 10px 20px;
+    margin-top: 250px;
+}
+section article:hover legend {
+    margin-top: 180px;
+}
 
-/**
 section article:nth-child(even):hover {
     background-position: 100% 75%;
     cursor: pointer;
@@ -41,17 +51,45 @@ section article:nth-child(odd):hover {
     cursor: pointer;
 }
 
-legend {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #FFF;
-    text-align: center;
-    transition: all .3s ease-in-out;
-    padding: 10px 20px;
-    margin-top: 250px;
+/* AJOUT DES ARRIERES PLANS */
+
+section article:nth-child(1) {
+    background-image: url(images/paysage_1.webp);
 }
 
-
-article{
-height: 12vh;
-
+section article:nth-child(2) {
+    background-image: url(images/paysage_2.webp);
 }
+
+section article:nth-child(3) {
+    background-image: url(images/paysage_3.webp);
+}
+
+section article:nth-child(4) {
+    background-image: url(images/paysage_4.webp);
+}
+
+section article:nth-child(5) {
+    background-image: url(images/paysage_5.webp);
+}
+
+section article:nth-child(6) {
+    background-image: url(images/paysage_6.webp);
+}
+
+section article:nth-child(7) {
+    background-image: url(images/paysage_7.webp);
+}
+
+section article:nth-child(8) {
+    background-image: url(images/paysage_8.webp);
+}
+
+section article:nth-child(9) {
+    background-image: url(images/paysage_9.webp);
+}
+
+section article:nth-child(10) {
+    background-image: url(.images/paysage_10.webp);
+}
+
