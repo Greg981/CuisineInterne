@@ -1,0 +1,63 @@
+h1{
+    background-color: rgb(247, 255, 237);
+    padding: 30px 35px;
+    margin: -10px -50px;
+    text-align:center;
+    border-radius: 10px 10px 0 0;
+    }
+
+   
+    main{
+        width: 57em;
+        height: 39em;
+        margin:35px auto;
+        font-family: 'arial', sans-serif;
+    }
+    article{
+    width: 19em;
+    padding: 10px 50px 25px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-family: raleway;
+    float:left;
+    margin-top:50px;
+    }
+   
+    input[type=text],input[type=password]{
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    color: #4f4f4f;
+    font-size: 16px;
+    border-radius: 5px;
+    }
+    label{
+    color: #464646;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 1.3em;
+    font-weight: bold;
+    }
+   
+    b{
+    color:rgb(245, 10, 2);
+    font-size: 1.5em;
+    }
+    
+    input[type=button]{
+    font-size: 1em;
+    background: linear-gradient(#77f324 5%, #ffdd7f 100%);
+    border: 2px solid #222221;
+    color: #4E4D4B;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+    outline:none;
+    }
+    input[type=button]:hover{
+    background: linear-gradient(#386430 5%, #46ee03 100%);
+    }
