@@ -27,11 +27,10 @@ else {
  }
 
 
-const newAccount = new BankAccount (
-   'Greg G',
-   500
-);
+const newAccount = new BankAccount ('Greg G', 500);
+
 newAccount.showBalance();
 newAccount.deposit(150);
 newAccount.withdraw(130);
-newAccount.withdraw(700);
+newAccount.deposit(251);
+newAccount.withdraw(900);
