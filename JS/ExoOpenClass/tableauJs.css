@@ -1,0 +1,15 @@
+body {
+    color :blue;
+    background-color: black;
+    text-align: center;
+    font-size: 30px;
+}
+h2 {
+    color: rgb(124, 43, 134);
+}
+h3 {
+    color: rgb(188, 28, 236);
+}
+h4 {
+    color: rgb(10, 44, 238);
+}
