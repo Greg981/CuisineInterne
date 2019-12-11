@@ -26,14 +26,14 @@ for (let jour of calendrier) {
 console.groupEnd();
 
 // afficher tous les éléments du tableau methode4
-console.groupCollapsed("Parcours du alendrier avec boucle for.....in");
+console.groupCollapsed("Parcours du calendrier avec boucle for.....in");
 for (let index in calendrier) {
     console.log(calendrier[index]);
 };
 console.groupEnd();
 
 // afficher tous les éléments du tableau methode5
-console.groupCollapsed("Parcours du alendrier avec forEach et fléchée");
+console.groupCollapsed("Parcours du calendrier avec forEach et fléchée");
 calendrier.forEach(jour => console.log(jour));
 
 console.groupEnd();
