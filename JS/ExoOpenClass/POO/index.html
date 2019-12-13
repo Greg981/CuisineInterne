@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>coursPOO</title>
+</head>
+
+<body>
+    <h1>Salut Greg</h1>
+
+    <script src=robot.js></script>
+    <script src=superRobot.js></script>
+
+    <script>
+        let monRobot = new Robot("blue","true","actif","un plus gros que l'autre");
+        let monAutreRobot = new Robot("bleue foncée", "false", "actif au taquet","un plus gros que l'autre moi aussi");
+        let robotModif = new superRobot();
+
+        console.log("la description de mon robot est:", monRobot);
+        monRobot.avancer();
+        monRobot.parler();
+        monRobot.utiliser();
+        monRobot.leverUneJambe();
+        monRobot.echelle();
+        monRobot.echelle1();
+        monRobot.escalader();
+        monRobot.sauter();
+       
+        console.log("la description de mon autre robot est:", monAutreRobot);
+        monAutreRobot.danser();
+        monAutreRobot.tourner();
+        monAutreRobot.leverLesBras();
+
+        console.log("la description de mon autre robot est:", robotModif);
+        robotModif.echelle();
+        robotModif.echelle1();
+        robotModif.escalader();
+        robotModif.sauter();
+
+
+    </script>
+
+    <!-- <script src=voiture.js></script>
+
+    <script>
+        let maTesla = new Voiture("Tesla","blue","automatique");
+        let monAutreVoiture = new Voiture("Honda","vert","mecanique");
+
+        console.log(maTesla.marque);
+        console.log(maTesla.couleur);
+        console.log(maTesla.boiteVitesse);
+        console.log("la marque de mon autre voiture est:", monAutreVoiture.marque);
+        console.log("la couleur de mon autre voiture est:", monAutreVoiture.couleur);
+        console.log("la boite de vitesse de mon autre voiture est:", monAutreVoiture.boiteVitesse);
+    </script> -->
+
+
+
+    <!---->
+</body>
+
+</html>
+</body>
+
+</html>
