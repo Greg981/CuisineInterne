@@ -1,0 +1,18 @@
+
+body{
+    text-align:center;
+}
+div{
+    display:inline-block;
+    position: relative;
+    font-weight: bold;
+    font-size: xx-large;
+}
+.move{
+    animation: move 2s ;
+}
+@keyframes move{
+    0%{transform: translateX(0px);}
+    50%{transform: translateX(200px);}
+    100%{transform: translateX(0px);}
+}
