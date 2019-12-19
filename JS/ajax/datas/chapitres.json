@@ -1,0 +1,27 @@
+[
+    {
+        "titre": "Bienvenue",
+        "texte": "Bienvenue sur mon site de merde"
+    },
+    {
+        "titre": "Chapitre 1 : un chapitre pour débuter",
+        "texte": "Paragraphe 1 du chapitre 1"
+    },
+    {
+        "titre": "Chapitre 2 : un autre chapitre",
+        "texte": "Paragraphe 1 du chapitre 2"
+    },
+    {
+        "titre": "Chapitre 3 : encore un chapitre",
+        "texte": "Paragraphe 1 du chapitre 3"
+    },
+    {
+        "titre": "Chapitre 4 : encore un chapitre",
+        "texte": "Paragraphe 1 du chapitre 4"
+    },
+    {
+        "titre": "Chapitre 5 : encore un chapitre",
+        "texte": "Paragraphe 1 du chapitre 5"
+    }
+
+]
