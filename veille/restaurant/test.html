@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method='POST' action='#'>
+        <label for="file"> Photo d'identité : </label>
+        <input type="file" name="file" id="file" formenctype="multipart/form-data" multiple files size="300" />
+
+        <input type='submit'>
+
+        <article>
+
+        </article>
+    </form>
+    <script>
+        let photo = document.getElementById('file').files
+        console.log(photo)
+        let article = document.querySelector('article')
+        console.log(article)
+
+        let content = document.createElement('p')
+        for (let i = 0; i <= photo.length; i++) {
+            content.textContent = photo[i]
+        }
+        console.log(content)
+        article.appendChild(content)
+    </script>
+</body>
+
+</html>

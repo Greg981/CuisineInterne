@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tchat Websockets</title>
+</head>
+<style>
+body {
+    background-color: #fff;
+    font: 20px Helvetica, Arial;
+    color:black;
+    padding:0;
+    margin:0;
+}
+.saisie {
+    padding:3px;
+    position:absolute;
+    left:2%;
+    bottom:2%;
+    border:2px solid grey;
+}
+.saisie input {
+    width:85vw;
+    border:0; 
+    padding: 10px;
+    font-size:18px;
+}
+.saisie button {
+    width:7vw;
+    height:5vh;
+    background:none;
+    border:none;
+    background-color: rgba(4, 103, 160, 0.699);
+    border-radius: 10px;
+    font-size: 15px;
+}
+#m {
+    list-style-type: none; 
+    margin:0;
+}
+#messages li {
+    padding : 5px 10px;
+}
+#messages li:nth-child(odd) {
+    background-color: rgb(185, 180, 180);
+}
+</style>
+
+<body>
+
+    <ul id='m'>
+    </ul>
+
+    <div class='saisie'>
+        <input id='messages' />
+        <button onclick='send()'>Send</button>
+    </div>
+
+    <script src='/socket.io/socket.io.js'></script> <!-- Libraire socket.io-->
+    <script>
+    var socket = io(); // prend l'url par défaut 
+
+    var send = function (){ // envoie les messages
+        var text = document.getElementById('messages').value; // on stock les values renseignées dans input dans la var text
+        socket.emit('chat message', text); // Méthode .emit prédéfinie qui permet d'envoyer les données
+        // En param, on réutilise l'évènement quand on a défini + la cible
+    }
+
+    var receive = function (msg) { // ajout dans le DOM
+        var ul = document.getElementById('m')
+        var li = document.createElement('li')
+        li.innerText = msg
+        ul.appendChild(li)
+    }
+    socket.on('chat message', receive); // j'écoute côté client ce qui arrive sur l'évènement chat message puis j'éxécute receive 
+    </script>
+</body>
+
+</html>

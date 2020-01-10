@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form HTML veille</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</head>
+<body>
+ <style>
+
+body {
+     background-color: rgba(41, 66, 83, 0.651);
+     font-size:20px;
+     color:white;
+    }   
+label {
+    display:inline-block;
+    padding:10px;
+    width: 200px;
+}
+input{
+    width:300px;
+    height:25px;
+    font-size:20px;
+    border-radius:10px;
+    padding-left:10px;
+    
+}
+
+form {
+    margin-top:20px;
+    margin-bottom:500px;
+}
+fieldset {
+    margin-top:30px;
+    border:5px solid white;
+    
+}
+#color {
+    width:50px;
+}
+legend{
+    font-size:30px;
+    background-color:black;
+}
+#fieldset1 {
+    background-color: rgb(0, 3, 0);
+}
+#fieldset2 {
+    background-color: rgba(0, 0, 0, 0.774);
+}
+#fieldset3{
+    background-color: rgba(0, 0, 0, 0.459);
+}
+#fieldset4{
+    background-color: rgba(0, 0, 0, 0.342);
+}
+#fieldset5{
+    background-color: rgba(0, 0, 0, 0.815);
+}
+#labelpays {
+    width:300px;
+}
+ /* select option {
+    font-size:20px;
+    appearance: none;
+    -webkit-appearance: none;
+     background-color:red; 
+}  */
+select option {
+  background: rgb(78, 122, 61); 
+  box-shadow: rgb(255, 0, 0)
+} 
+
+select option:hover::shadow {
+  color: #000; 
+  box-shadow: rgb(179, 230, 194);
+} 
+
+
+#Homme, #Femme {
+    width:20px;
+}
+.sexx {
+    width:60px;
+}
+
+:required:valid {
+    border:3px solid rgb(0, 255, 0);
+}
+
+:required:invalid {
+    border:3px solid red;
+    background-color:#ffdddd;
+}
+
+
+#html, #css, #php, #js {
+    width:30px;
+}
+#file {
+    width:200px;
+}
+
+#aviss {
+    width:200px; 
+}
+</style>
+
+<body>
+        
+<form method="POST" action="traitement.php" target=_blank >
+
+    <fieldset id='fieldset1'>
+        <legend> Identité </legend>
+        <p>  
+            <label for="nom"> Nom : </label>
+            <input type="text" name="nom" id ="nom"  
+            required minlength='2' autofocus /> 
+        </p>
+    
+        <p>
+            <label for="prenom"> Prénom : </label>
+            <input type="text" name="prenom" id ="prenom" 
+               minlength='2' required  > 
+        </p>
+
+        <p>
+            <label for="sexe">Sexe :</label>
+            <input type="radio" name="sexe" value="Homme" id="Homme" /> <label class='sexx' for="Homme">Homme</label> 
+            <input type="radio" name="sexe" value="Femme" id="Femme" /> <label class='sexx' for="Femme">Femme</label> 
+           
+        </p>
+
+        <p>
+            <label id="labelpays" for="pays">Dans quel pays habitez-vous ?</label><br />
+            <select name="pays" id="pays">
+                <!-- <optgroup label='Europe'>  -->
+                        <option value="france">France</option>
+                        <option value="espagne" selected >Espagne</option>
+                        <option value="italie">Italie</option>
+                        <option value="royaume-uni">Royaume-Uni</option>
+                <!-- </optgroup> -->
+                        <!-- <optgroup label='Amerique'>  -->
+                        <option value="canada">Canada</option>
+                        <option value="etats-unis">États-Unis</option>
+                <!-- <optgroup label='Asie'>  -->
+                        <option value="chine">Chine</option>
+                        <option value="japon">Japon</option>
+                <!-- </optgroup> -->
+            </select>
+        </p> 
+
+        <p> 
+          
+        </p> 
+
+    </fieldset> 
+
+    <fieldset id='fieldset5'>
+            <legend> Identifiant </legend>
+             <p>
+                <label for="pseudo"> Pseudo : </label>
+                <input type="text" name="pseudo" id ="pseudo" placeholder=Yoyo64
+                required pattern=[a-zA-z0-9]{3,15} maxlength='15'/> 
+            </p>
+
+            <p>  
+                <label for="mdp"> Mot de passe : </label>
+                <input type="password" name="mdp" id ="mdp" required minlength='6' />
+            </p>
+           
+    </fieldset>
+
+    <fieldset id='fieldset2'>
+        <legend> Contact </legend>
+         <p>
+            <label for="telephone"> Telephone : </label>
+            <input type="tel" name="telephone" id ="telephone" placeholder='0611223344'
+            required pattern="[0-9]{10}" maxlength="10"/> 
+        </p>
+
+        <p>  
+            <label for="addresse"> Adresse : </label>
+            <input type="text" name="adresse" id ="adresse" />
+        </p>
+
+        <p>  
+                <label for="site"> Votre site internet : </label>
+                <input type="url" name="site" required id ="site" />
+        </p>
+    </fieldset>
+
+    <fieldset id='fieldset3'>
+        <legend> Informations</legend>
+        <p> 
+            <label for="color"> Couleur thème : </label>
+            <input type="color" name="color" id ="color" />
+        </p>
+        
+        <p>  
+            <label for="range"> Années d'expériences en dev : </label>
+            <input type="range" class="range" name="range" id ="range" min='0' max='20' step='1' value='1'
+            oninput="result.value=parseInt(d.value)" />
+            <output name="result">--</output>
+        </p>
+
+        <p>  
+            <label for="number"> Années d'expériences en dev : </label>
+            <input type="number" name="number" id ="number" />
+        </p>
+
+        <p>
+            Langages maitrisés :<br />
+            <input type="checkbox" name="html" id="html" checked/> <label for="html">HTML</label> <br>
+            <input type="checkbox" name="css" id="css" /> <label for="css">CSS</label> <br>
+            <input type="checkbox" name="php" id="php" /> <label for="php">PHP</label> <br>
+            <input type="checkbox" name="js" id="js" /> <label for="js">JS</label><br>
+        </p>
+
+        <p> 
+            <label id='aviss' for='avis'>Laissez-nous un avis : </label> <br>
+            <textarea name='avis' id='avis' rows="10" cols="50"></textarea>
+        </p>
+    </fieldset> 
+
+    <fieldset id='fieldset4'>
+         <legend> Prise de rendez-vous</legend>
+        
+        <p>  
+            <label for="time"> Heure de rdv : </label>
+            <input type="time" name="time" id ="time" />
+        </p>
+
+        <p>  
+            <label for="date"> Jour  : </label>
+            <input type="date" name="date" min="id ="date" />
+        </p>
+
+        <p>  
+            <label for="week"> Semaine : </label>
+            <input type="week" name="week" id ="week" />
+        </p>
+
+        <p>  
+            <label for="month"> Mois : </label>
+            <input type="month" name="time" id ="time" />
+        </p>
+
+        <p>  
+            <label for="datetime"> Date + heure : </label>
+            <input type="datetime-local" name="datetime" id ="datetime" />
+        </p>
+    </fieldset>
+
+        <button type="submit">Envoyer</button>
+</form>
+
+
+<script>
+        $(function() {
+        $('.range').next().text('--'); // Valeur par défaut
+        $('.range').on('input', function() {
+            var $set = $(this).val();
+            $(this).next().text($set);
+        });
+    });
+</script>
+
+</body>
+</html>

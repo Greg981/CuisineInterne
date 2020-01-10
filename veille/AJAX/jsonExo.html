@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Requête Ajax en JS</title>
+</head>
+<style>
+    section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    article {
+        margin: 1vw;
+        border: 2px solid black;
+        padding: 5px;
+        width: 20vw
+    }
+</style>
+
+<body>
+    <button id='requestAjax' onclick="maj()">Afficher les données</button>
+    <header></header>
+    <section></section>
+
+    <script>
+
+        function maj() {
+            let request = new XMLHttpRequest();
+            request.open('GET', "data2.json", true); 
+            request.onreadystatechange = function() {
+                if (request.readyState === 4 && request.status === 200) {
+                    afficher(JSON.parse(this.response))
+                    // console.log(request.statusText)
+                } 
+            };
+            request.send(); // La requête est envoyée au serveur avec la fonction send()
+
+            let header = document.querySelector('header');
+            let section = document.querySelector('section');
+
+            function afficher(jsonObj) {
+                let namePromo = document.createElement('h1');
+                namePromo.textContent = jsonObj['titre'];
+                header.appendChild(namePromo);
+
+                let Apprenants = jsonObj['apprenants']
+                for (let i = 0; i < Apprenants.length; i++) {
+                    let myArticle = document.createElement('article');
+                    let myH2 = document.createElement('h2');
+                    let ages = document.createElement('p');
+                    myH2.textContent = `Nom : ${Apprenants[i].name}`;
+                    ages.textContent = `Age : ${Apprenants[i].age} ans`;
+                    myArticle.appendChild(myH2)
+                    myArticle.appendChild(ages)
+                    section.appendChild(myArticle);
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

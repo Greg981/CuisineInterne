@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Requête Ajax en JQUERY </title>
+</head>
+<style>
+    section {
+        display:flex;
+        flex-wrap: wrap;
+    }
+    article {
+        margin: 1vw;
+        border:2px solid black;
+        padding:5px;
+        width:20vw
+    }
+</style>
+
+<body>
+    <button id='requestAjax'>MAJ</button>
+    <header></header>
+    <section></section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>     
+    $('#requestAjax').click(function(){
+        $.get('data2.json',function(data){
+            console.log(data)
+            $('header').append('<h1>' + data.titre + '</h1> <br>');
+            $.each(data.apprenants,function(index,value){
+                $('section').append(`<article><h2> Nom : ${value.name} </h2><br>
+                                              <p>  Age : ${value.age} ans </p></article>`)
+            });
+        });
+    });
+</script>
+</body>
+</html>

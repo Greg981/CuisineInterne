@@ -83,4 +83,3 @@ function afficherMenuJson() {
 afficherMenuJson();
 
 
-console.log("fin de fichier");

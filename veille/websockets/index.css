@@ -1,0 +1,38 @@
+body {
+    background-color: #fff;
+    font: 20px Helvetica, Arial;
+    color:black;
+    padding:0;
+    margin:0;
+}
+.saisie {
+    padding:3px;
+    position:absolute;
+    left:2%;
+    bottom:2%;
+    border:2px solid grey;
+}
+.saisie input {
+    width:85vw;
+    border:0; 
+    padding: 10px;
+    font-size:18px;
+}
+.saisie button {
+    width:7vw;
+    height:5vh;
+    background:none;
+    border:none;
+    background-color: rgba(4, 103, 160, 0.699);
+    border-radius: 10px;
+    font-size: 15px;
+}
+#messages {
+    list-style-type: none; margin:0;
+}
+#messages li {
+    padding : 5px 10px;
+}
+#messages li:nth-child(odd) {
+    background-color: rgb(185, 180, 180);
+}

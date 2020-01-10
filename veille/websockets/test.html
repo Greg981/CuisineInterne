@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var exampleSocket; 
+  
+  function connect(){ 
+      exampleSocket = new WebSocket("localhost:8765"); 
+      exampleSocket.onopen = function (event) { console.log("/!\\ Connexion serveur"); } 
+      exampleSocket.onerror = function (event) { console.log(event); } 
+      exampleSocket.onmessage = function (event) { console.log(event.data); } 
+      exampleSocket.onclose = function (event) { console.log("/!\\ Déconnexion serveur"); } 
+  }
+  connect()
+  exampleSocket.send('bonjour')
+    </script>
+</body>
+</html>

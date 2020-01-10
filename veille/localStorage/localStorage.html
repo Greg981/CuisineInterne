@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id='crea'>creation</button>
+    <button id='recup'>recup</button>
+    <script>
+        let crea = document.getElementById('crea')
+        let recup = document.getElementById('recup')
+        crea.style.color ='red'
+        recup.style.color ='green'
+        crea.addEventListener("click", function() {
+            localStorage.setItem('username', 'Mathieu')
+        })
+        recup.addEventListener('click', function() {
+            alert('username = ' +  localStorage.getItem('username') )
+        })
+    </script>
+</body>
+</html>
