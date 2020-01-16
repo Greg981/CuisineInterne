@@ -12,8 +12,8 @@ var_dump($activites);
 $pierre = array("1"=>"Php","2"=>"Javascript","3"=>"Python");
 $paul = array("1"=>"Javascript","2"=>"Css","3"=>"Php");
 $jacques = array("1"=>"Java","2"=>"Php","3"=>"Javascript");
-
-$preferences = array_merge($pierre, $paul, $jacques);
+// $preferences = array();
+$preferences = array_merge($pierre, $paul, $jacques);// do one tableau avec les 3 precedents
 
 var_dump($preferences);
 
@@ -21,7 +21,7 @@ $associationPreferences = ["Pierre"=>$pierre,"Paul"=>$paul,"Jacques"=>$jacques];
 
 var_dump($associationPreferences);
 
-$occurences = array_count_values($preferences);
+$occurences = array_count_values($preferences); // sert a compter le nombre d'occurence du tableau
 var_dump($occurences);
 
 

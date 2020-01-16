@@ -7,21 +7,19 @@
     <title>Document</title>
 </head>
 <body>
+    
 
 <?php
 
-function tableau(){
-$creertableau = array();
-    for ($l=1; $l <= 49 ; $l++) { 
-        $creertableau[]= $l;
-       }
-      return $creertableau;
+
+class TestMe {
+  public function __construct() { echo "2"; }
+  public function __destruct() { echo "1"; }
 }
+$test = new TestMe();
+unset($test);
 
-echo '<pre>'.print_r(tableau(),true).'</pre>';
-?> 
-
-
+?>
 
 </body>
 </html>
