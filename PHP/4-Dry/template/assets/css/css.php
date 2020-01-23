@@ -59,4 +59,4 @@ padding : 0;
     padding-top: 70px;
     padding-bottom: 70px;
 }
-      
+</style>

@@ -1,8 +1,8 @@
 <?php
 
-define("css", '/template/');
+define("css", 'template/assets/css/');
 define("contact", '/template/first_contact.php');
-define("img", 'images/');
+define("img", 'assets/images/');
 
 
 ?>

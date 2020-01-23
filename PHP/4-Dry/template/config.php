@@ -22,8 +22,7 @@ if (isset($_GET['page'])) {
     elseif ($_GET['page']=="blog") {
         include "blog.php";
     }
-
-    
+ 
     elseif ($_GET['page']=="about") {
         include "first.php";
     }
