@@ -84,6 +84,55 @@
         (SELECT idBoisson FROM commande_boissons GROUP BY idBoisson HAVING count(idBoisson) >= 10)");
         $conn->tableit($req13, ["Designation", "idBoisson"]);
 
+        echo "Jointures";
+
+        // 1. Afficher la liste des plats avec comme colonnes : "Plat", "Type" et "Prix" (utilisez des alias)
+
+       //SELECT LibellePlat AS plat, Designation AS type, concat(PrixVente, ' ', '00.€') as Prix  FROM  plats INNER JOIN typeplats ON typeplats.idType = plats.idType
+
+        //2. Afficher chaque menu avec la liste de chaque plat avec son type, ordonné par prix
+
+        SELECT menus.Libelle AS Menu , concat(menus.PrixVente, ' ', '00.€') AS PrixMenu, typeplats.Designation AS Type, plats.LibellePlat FROM plats 
+        INNER JOIN menu_plats ON plats.idPlat = menu_plats.idPlat 
+        INNER JOIN menus ON menus.idMenu = menu_plats.idMenu
+        INNER JOIN typeplats ON plats.idType = typeplats.idType
+        ORDER BY menus.PrixVente
+
+
+        // 3. Afficher pour chaque mois de 2019, le nb de menus commandés et le CA que cela représente
+        SELECT DATE_FORMAT(c.DateCommande, "%M %Y") as Mois, 
+       count(distinct c.idCommande) as 'nb Commandes',
+	   count(cm.idmenu) as 'nb Menus',
+	   concat( FORMAT( SUM(m.PrixVente), 2), '€') as 'CA des menus du mois'
+        FROM commandes c
+        inner join commande_menus cm on cm.idCommande=c.idCommande
+        inner join menus m on m.idMenu=cm.idmenu
+        where YEAR(c.DateCommande)=2019 
+        group by mois, MONTH(c.DateCommande)
+        order by MONTH(c.DateCommande)
+
+        //  4. Afficher aussi les commandes pour lesquels aucun menu n’a été commandé (LEFT JOIN)
+
+        SELECT DATE_FORMAT(c.DateCommande, "%M %Y") as Mois, 
+        count(distinct c.idCommande) as 'nb Commandes',
+        count(cm.idmenu) as 'nb Menus',
+        concat( FORMAT(SUM( IFNULL(m.PrixVente,0) ), 2), '€') as 'CA des menus du mois'
+        FROM commandes c
+        left join commande_menus cm on cm.idCommande=c.idCommande
+        left join menus m on m.idMenu=cm.idmenu
+        where YEAR(c.DateCommande)=2019 
+        group by mois, MONTH(c.DateCommande)
+        order by MONTH(c.DateCommande)
+
+        //    5. Afficher la même chose pour les plats à la carte
+
+        //  6. Afficher pour chaque mois de 2019 le CA total hors boisson (menu + plat à la carte)
+
+
+
+
+    
+
         ?>
         </main>
     </body>

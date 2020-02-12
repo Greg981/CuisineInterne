@@ -7,8 +7,8 @@ if(isset($_POST['formInscription']))
     $nickname = htmlspecialchars($_POST['nickname']);
     $email = htmlspecialchars($_POST['email']);
     $cemail = htmlspecialchars($_POST['cemail']);
-    $password = sha1($_POST['password']);
-    $cpassword = sha1($_POST['cpassword']);
+    $password = hash('sha256',$_POST['password']);
+    $cpassword = hash('sha256',$_POST['cpassword']);
 
     if(!empty($_POST['nickname']) AND !empty($_POST['email']) AND !empty($_POST['cemail']) AND !empty($_POST['password']) AND !empty($_POST['cpassword']))
     {
@@ -20,37 +20,37 @@ if(isset($_POST['formInscription']))
             $reqnickname->execute(array($nickname));
             $nicknameexist = $reqnickname->rowCount();
             if ($nicknameexist == 0) 
-                {
+            {
                 if($email == $cemail)
                 {
                     if(filter_var($email, FILTER_VALIDATE_EMAIL))
                     {
-                        $reqemail = $bdd->prepare ("SELECT * FROM membres WHERE email = ?");
-                        $reqemail->execute(array($email));
-                        $emailexist = $reqemail->rowCount();
-                        if ($emailexist == 0) 
-                    {
-
-                        if($password == $cpassword)
+                            $reqemail = $bdd->prepare ("SELECT * FROM membres WHERE email = ?");
+                            $reqemail->execute(array($email));
+                            $emailexist = $reqemail->rowCount();
+                            if ($emailexist == 0) 
                         {
-                            $insertmember = $bdd->prepare("INSERT INTO membres (nickname, email, passwor) VALUES(?, ?, ?)");
-                            $insertmember->execute(array($nickname, $email, $password));
-                            $erreur = "Your account have been created ! <a href=\"connexion.php\">connect</a>";  
+
+                            if($password == $cpassword)
+                            {
+                                $insertmember = $bdd->prepare("INSERT INTO membres (nickname, email, passwor) VALUES(?, ?, ?)");
+                                $insertmember->execute(array($nickname, $email, $password));
+                                $erreur = "Your account have been created ! <a href=\"connexion.php\">connect</a>";  
                             }
                             else 
                             {
                                 $erreur = "Your Password do not match !!";
                             }
-                            }
-                            else
-                            {
-                                $erreur = " Email already exist!!";
-                            }    
                         }
-                       else
-                       {
+                        else
+                        {
+                            $erreur = " Email already exist!!";
+                        }    
+                    }
+                    else
+                    {
                         $erreur = "Your email adress is not valid !!";
-                       }
+                    }
                 }
                 else 
                 {

@@ -3,10 +3,12 @@ session_start();
 
 $bdd = new PDO('mysql:host=127.0.0.1;dbname=espace_membre;charset=utf8', 'greg', 'greg');
 
+include_once('cookie_Connect.php');
+
 if(isset($_POST['formconnect']))
 {
     $nicknameconnect = htmlspecialchars($_POST['nicknameconnect']);
-    $passwordconnect = sha1($_POST['passwordconnect']);
+    $passwordconnect = hash('sha256',$_POST['passwordconnect']);
     if (!empty($nicknameconnect) AND !empty($passwordconnect)) 
     {
         $requser = $bdd->prepare ("SELECT * FROM membres WHERE nickname = ? AND passwor = ? ");
@@ -14,6 +16,11 @@ if(isset($_POST['formconnect']))
         $userexist = $requser->rowCount();
         if ($userexist == 1) 
         {
+            if(isset($_POST['remember'])) //traitement de la checkbox si variable remember exist et est coché alors
+            {
+                setcookie('nick',$nicknameconnect,time()+365*24*3600,null,null,false,true);// permet de degager le cookie après 1 an de stockage
+                setcookie('pass',$passwordconnect,time()+365*24*3600,null,null,false,true);
+            }
             $userinfo = $requser->fetch();
             $_SESSION['id'] = $userinfo['id'];
             $_SESSION['nickname'] = $userinfo['nickname'];
@@ -22,7 +29,7 @@ if(isset($_POST['formconnect']))
         }
         else
         {
-            $erreur = "Wrong email or Password !!!";
+            $erreur = "Wrong Nickname or Password !!!";
         }
     }
     else
@@ -49,9 +56,12 @@ if(isset($_POST['formconnect']))
         <br /><br />
         <form method="POST" action="">
             <input type="text" name="nicknameconnect" placeholder="nickname" />
-            <input type="password" name="passwordconnect" placeholder="password" />
+            <input type="password" name="passwordconnect" placeholder="password" />  
+            <br /><br /> 
+            <input type="checkbox" name="remember" id="remembercheckbox"><label for="remembercheckbox">Remember me</label>
+            <br /><br />
             <input type="submit" name="formconnect" value="connect !" />
-
+            
         </form>
 
  <?php
