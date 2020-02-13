@@ -29,12 +29,12 @@ if(isset($_POST['formconnect']))
         }
         else
         {
-            $erreur = "Wrong Nickname or Password !!!";
+            $error = "Wrong Nickname or Password !!!";
         }
     }
     else
     {
-        $erreur = "All fields MUST be filled!!!";
+        $error = "All fields MUST be filled!!!";
     }
 }
 ?>
@@ -65,9 +65,9 @@ if(isset($_POST['formconnect']))
         </form>
 
  <?php
-if(isset($erreur))
+if(isset($error))
 {
-    echo '<font color="red">'.$erreur.'</font>';
+    echo '<font color="red">'.$error.'</font>';
 }
  ?>
 

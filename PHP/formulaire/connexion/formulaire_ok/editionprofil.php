@@ -42,7 +42,7 @@ if (isset($_SESSION['id']))
             }
             else 
             {
-                $erreur = "Your password do not match!!!";
+                $error = "Your password do not match!!!";
             }
 
 
@@ -113,9 +113,9 @@ if (isset($_SESSION['id']))
                     </td>
                 </tr>
             </table>
-            <?php if(isset($erreur)) 
+            <?php if(isset($error)) 
             {
-            '<font color="red">'.$erreur.'</font>';
+            '<font color="red">'.$error.'</font>';
             }
             ?>
         </form>

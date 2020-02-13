@@ -8,9 +8,22 @@
 </head>
 <body>
   
-<h2> test </h2>
+<h2> test cookie rgpd  </h2>
 <?php
 require_once('cookieview.php')
 ?>
+
+ <?php
+if(isset($error))
+{
+    echo '<font color="red">'.$error.'</font>';
+}
+ ?>
+
+    </div>
+
+
+
+
 </body>
 </html>

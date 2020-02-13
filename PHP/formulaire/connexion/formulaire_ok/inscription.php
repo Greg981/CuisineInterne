@@ -35,41 +35,41 @@ if(isset($_POST['formInscription']))
                             {
                                 $insertmember = $bdd->prepare("INSERT INTO membres (nickname, email, passwor) VALUES(?, ?, ?)");
                                 $insertmember->execute(array($nickname, $email, $password));
-                                $erreur = "Your account have been created ! <a href=\"connexion.php\">connect</a>";  
+                                $error = "Your account have been created ! <a href=\"connexion.php\">connect</a>";  
                             }
                             else 
                             {
-                                $erreur = "Your Password do not match !!";
+                                $error = "Your Password do not match !!";
                             }
                         }
                         else
                         {
-                            $erreur = " Email already exist!!";
+                            $error = " Email already exist!!";
                         }    
                     }
                     else
                     {
-                        $erreur = "Your email adress is not valid !!";
+                        $error = "Your email adress is not valid !!";
                     }
                 }
                 else 
                 {
-                $erreur = "Your Email adress do not match !!"; 
+                $error = "Your Email adress do not match !!"; 
                 }
             }
             else
             {
-                $erreur = "Nickname already exist !!";  
+                $error = "Nickname already exist !!";  
             }   
         }
         else
         {
-            $erreur = " Your Nick Name must be below 255 digits!!!";
+            $error = " Your Nick Name must be below 255 digits!!!";
         }
     }
     else 
     {
-       $erreur = "remplie TOUT les champs connard!";
+       $error = "Fill ALL fields connard!";
     }
 }
 
@@ -147,9 +147,9 @@ if(isset($_POST['formInscription']))
 
         </form>
  <?php
-if(isset($erreur))
+if(isset($error))
 {
-    echo '<font color="red">'.$erreur.'</font>';
+    echo '<font color="red">'.$error.'</font>';
 }
  ?>
     </div>
