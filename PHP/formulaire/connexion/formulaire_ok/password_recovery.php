@@ -76,7 +76,7 @@ if(isset($_POST['recovery_submit'],$_POST['mail_recovery']))
              </body>
              </html>
              ';
-             mail($recup_mail, "Récupération de mot de passe - Votresite", $message, $header);
+            mail($recup_mail, "Récupération de mot de passe - Votresite", $message, $header);
             header("Location:http://127.0.0.1/CuisineInterne/PHP/formulaire/connexion/formulaire_ok/password_reco_formular.php?section=token");
             } 
             else

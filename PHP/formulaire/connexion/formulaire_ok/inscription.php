@@ -69,7 +69,7 @@ if(isset($_POST['formInscription']))
     }
     else 
     {
-       $error = "Fill ALL fields connard!";
+       $error = "Fill ALL fields Dumb ass!";
     }
 }
 

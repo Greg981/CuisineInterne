@@ -3,57 +3,56 @@ session_start();
 
 $bdd = new PDO('mysql:host=127.0.0.1;dbname=espace_membre;charset=utf8', 'greg', 'greg');
 
-if(isset($_GET['section']))
-{
+if (isset($_GET['section'])) {
     $section = htmlspecialchars($_GET['section']);
+} else {
+    $section = "";
 }
-    else
-    {
-        $section = "";
-    }
 
-if(isset($_POST['recovery_submit'],$_POST['mail_recovery']))
+if (isset($_POST['recovery_submit'], $_POST['mail_recovery'])) 
 {
-    if(!empty($_POST['mail_recovery']))
+    if (!empty($_POST['mail_recovery'])) 
     {
-        $recup_mail= htmlspecialchars($_POST['mail_recovery']);
-        if(filter_var($recup_mail,FILTER_VALIDATE_EMAIL))
+        var_dump($_POST['mail_recovery']);
+        $recup_mail = htmlspecialchars($_POST['mail_recovery']);
+        if (filter_var($recup_mail, FILTER_VALIDATE_EMAIL)) 
         {
             $mailexist = $bdd->prepare('SELECT id,nickname FROM membres WHERE email =?');
             $mailexist->execute(array($recup_mail));
             $mailexist_count = $mailexist->rowCount();
-            if($mailexist_count == 1)
+            if ($mailexist_count == 1) 
             {
                 $nickname = $mailexist->fetch();
                 $nickname = $nickname['nickname'];
-                
+
 
                 $_SESSION['mail_recovery'] = $recup_mail;
-                $token = "" ;
-                for ($i=0; $i < 8; $i++) 
-                { 
-                    $token .= mt_rand(0,9);
+                var_dump($_SESSION['mail_recovery']);
+                $token = "";
+                for ($i = 0; $i < 8; $i++) 
+                {
+                    $token .= mt_rand(0, 9);
                 }
                 $mail_recup_exist = $bdd->prepare('SELECT id FROM recup WHERE mail = ?');
                 $mail_recup_exist->execute(array($recup_mail));
                 $mail_recup_exist = $mail_recup_exist->rowCount();
 
-                    if($mail_recup_exist == 1)
-                    {
-                        $getToken = $bdd->prepare('UPDATE recup SET token = ? WHERE mail =?');
-                        $getToken->execute(array($token,$recup_mail));
-                    }
-                    else
-                    {
-                        $getToken = $bdd->prepare('INSERT INTO recup(mail,token,confirmation) VALUES (?,?)');
-                        $getToken->execute(array($recup_mail,$token));
-                    }
+                if ($mail_recup_exist == 1) 
+                {
+                    $getToken = $bdd->prepare('UPDATE recup SET token = ? WHERE mail =?');
+                    $getToken->execute(array($token, $recup_mail));
                 }
-                $header="MIME-Version: 1.0\r\n";
-             $header.='From:"[VOUS]"<votremail@mail.com>'."\n";
-             $header.='Content-Type:text/html; charset="utf-8"'."\n";
-             $header.='Content-Transfer-Encoding: 8bit';
-             $message = '
+                else 
+                {
+                    $getToken = $bdd->prepare('INSERT INTO recup(mail,token,confirmation) VALUES (?,?, "0")');
+                    $getToken->execute(array($recup_mail, $token));
+                }
+            
+            $header = "MIME-Version: 1.0\r\n";
+            $header .= 'From:"[greg]"<gregtest981@.com>' . "\n";
+            $header .= 'Content-Type:text/html; charset="utf-8"' . "\n";
+            $header .= 'Content-Transfer-Encoding: 8bit';
+            $message = '
              <html>
              <head>
                <title>Password recovery - Votresite</title>
@@ -66,8 +65,8 @@ if(isset($_POST['recovery_submit'],$_POST['mail_recovery']))
                      <tr>
                        <td>
                          
-                         <div align="center">Hello <b>'.$nickname.'</b>,</div>
-                         Here is your Token: <b>'.$token.'</b>
+                         <div align="center">Hello <b>' . $nickname . '</b>,</div>
+                         Here is your Token: <b>' . $token . '</b>
                          Seen you soon on: <a href="#">Votre site</a> !
                          
                        </td>
@@ -85,126 +84,135 @@ if(isset($_POST['recovery_submit'],$_POST['mail_recovery']))
              </body>
              </html>
              ';
-             mail($recup_mail, "Récupération de mot de passe - Votresite", $message, $header);
-            header("Location:http://127.0.0.1/CuisineInterne/PHP/formulaire/connexion/formulaire_ok/password_reco_formular.php?section=token");
-            } 
-            else
-            {
-                $error = "Email adress doesn't exist";
-            }
+            mail($recup_mail, "Password recovery - GREG!!", $message, $header);
+           header("Location:http://127.0.0.1/CuisineInterne/PHP/formulaire/connexion/formulaire_ok/password_reco_formular.php?section=token");
         } 
-        else 
+        else
         {
-            $error = "Invalid email adress";
+            $error = "Email adress doesn't exist";
         }
-
     } 
     else 
     {
-        $error = "Please enter your email adress";
+        $error = "Invalid email adress";
     }
-
-if(isset($_POST['verif_submit'],$_POST['verif_code'])) {
-        if(!empty($_POST['verif_code'])) {
-           $verif_code = htmlspecialchars($_POST['verif_code']);
-           $verif_req = $bdd->prepare('SELECT id FROM recup WHERE mail = ? AND token = ?');
-           $verif_req->execute(array($_SESSION['mail_recovery'],$verif_code));
-           $verif_req = $verif_req->rowCount();
-           if($verif_req == 1) {
-              $up_req = $bdd->prepare('UPDATE recup SET confirmation = 1 WHERE mail = ?');
-              $up_req->execute(array($_SESSION['mail_recovery']));
-              header('Location:127.0.0.1/CuisineInterne/PHP/formulaire/connexion/formulaire_ok/password_reco_formular.php?section=changemdp');
-           } else {
-              $error = "Invalid Code";
-           }
+} 
+else 
+{
+    $error = "Please enter your email adress";
+}
+}
+if (isset($_POST['verif_submit'], $_POST['verif_code'])) {
+    var_dump($_SESSION['mail_recovery']);
+    if (!empty($_POST['verif_code'])) {
+        $verif_code = htmlspecialchars($_POST['verif_code']);
+        $verif_req = $bdd->prepare('SELECT * FROM recup WHERE mail = ? AND token = ?');
+        $verif_req->execute([$_SESSION['mail_recovery'], $verif_code]);
+        $ress = $verif_req;
+        var_dump($ress);
+        $verif_req = $verif_req->rowCount();
+        var_dump($verif_req);
+        if ($verif_req == 1) {
+            $up_req = $bdd->prepare('UPDATE recup SET confirmation = 1 WHERE mail = ?');
+            $up_req->execute(array($_SESSION['mail_recovery']));
+            header('Location:127.0.0.1/CuisineInterne/PHP/formulaire/connexion/formulaire_ok/password_reco_formular.php?section=changemdp');
+       var_dump($result);
         } else {
-           $error = "Enter your confirmation code";
+            $error = "Invalid Code";
         }
-     }
-     if(isset($_POST['change_submit'])) {
-        if(isset($_POST['change_pass'],$_POST['change_pass_conf'])) {
-           $verif_confirme = $bdd->prepare('SELECT confirmation FROM recup WHERE mail = ?');
-           $verif_confirme->execute(array($_SESSION['mail_recovery']));
-           $verif_confirme = $verif_confirme->fetch();
-           $verif_confirme = $verif_confirme['confirmation'];
-           if($verif_confirme == 1) {
-              $mdp = htmlspecialchars($_POST['change_pass']);
-              $mdpc = htmlspecialchars($_POST['change_pass_conf']);
-              if(!empty($mdp) AND !empty($mdpc)) {
-                 if($mdp == $mdpc) {
-                    $mdp = hash('sha256',$mdp);
+    } else {
+        $error = "Enter your confirmation code";
+    }
+}
+if (isset($_POST['change_submit'])) {
+    if (isset($_POST['change_pass'], $_POST['change_pass_conf'])) {
+        $verif_confirme = $bdd->prepare('SELECT confirmation FROM recup WHERE mail = ?');
+        $verif_confirme->execute(array($_SESSION['mail_recovery']));
+        $verif_confirme = $verif_confirme->fetch();
+        $verif_confirme = $verif_confirme['confirmation'];
+        if ($verif_confirme == 1) {
+            $mdp = htmlspecialchars($_POST['change_pass']);
+            $mdpc = htmlspecialchars($_POST['change_pass_conf']);
+            if (!empty($mdp) and !empty($mdpc)) {
+                if ($mdp == $mdpc) {
+                    $mdp = hash('sha256', $mdp);
                     $ins_mdp = $bdd->prepare('UPDATE membres SET passwor = ? WHERE mail = ?');
-                    $ins_mdp->execute(array($mdp,$_SESSION['mail_recovery']));
-                   $del_req = $bdd->prepare('DELETE FROM recup WHERE mail = ?');
-                   $del_req->execute(array($_SESSION['mail_recovery']));
-                    header('Location:http://127.0.0.1/path/connexion/');
-                 } else {
+                    $ins_mdp->execute(array($mdp, $_SESSION['mail_recovery']));
+                    $del_req = $bdd->prepare('DELETE FROM recup WHERE mail = ?');
+                    $del_req->execute(array($_SESSION['mail_recovery']));
+                    header('Location:127.0.0.1/CuisineInterne/PHP/formulaire/connexion');
+                } else {
                     $error = "Your Password do not match!";
-                 }
-              } else {
-                 $error = "Fill ALL fields connard!";
-              }
-           } else {
-              $error = "Please validate your email with the Token previously send via email";
-           }
+                }
+            } else {
+                $error = "Fill ALL fields connard!";
+            }
         } else {
-           $error = "Fill ALL fields connard!";
+            $error = "Please validate your email with the Token previously send via email";
         }
-     }
+    } else {
+        $error = "Fill ALL fields connard!";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>password</title>
 </head>
+
 <body>
-<?php
-require_once('cookieview.php');
-?>
+    <?php
+    require_once('cookieview.php');
+    ?>
 
-<article>
-    <div align="center">
+    <article>
+        <div align="center">
 
-        <h2>Password recovery</h2>
-        <br />
-        <?php if($section == 'token')  { ?>
-            Verification code have been send to you via email: <?= $_SESSION['mail_recovery'] ?>
-            <br /><br />
-            <form method="post">
-                <input type="text" placeholder="Enter verification Code" name="verif_code"/><br/><br/>
-                <input type="submit" value="Validate" name="verif_submit"/>
-            </form>
+            <h2>Password recovery</h2>
+            <br />
+            <?php if ($section == 'token') { ?>
+                <!-- Verification code have been send to you via email: <?= $_SESSION['mail_recovery'] ?> -->
+                <br /><br />
+                <form method="post">
+                    <input type="text" placeholder="Enter verification Code" name="verif_code" /><br /><br />
+                    <input type="submit" value="Validate" name="verif_submit" />
+                </form>
 
-            <?php } elseif($section == "changemdp") { ?>
-            New password for <?= $_SESSION['mail_recovery'] ?>
-            <form method="post">
-                <input type="password" placeholder="Enter Your New Password" name="change_pass"/><br/><br/>
-                <input type="password" placeholder="Confirm Your New Password" name="change_pass_conf"/><br/><br/>
-                <input type="submit" value="Validate" name="change_submit"/>
-            </form>
-        <?php } else { ?> 
-        <form method="POST" action="">
-            <input type="email" name="mail_recovery" placeholder="Enter your Email " />
-            <br /><br /> 
-            <input type="submit" name="recovery_submit" value="Send !" />
-        </form>
-        <?php } ?>
+            <?php } elseif ($section == "changemdp") { ?>
+                New password for <?= $_SESSION['mail_recovery'] ?>
+                <form method="post">
+                    <input type="password" placeholder="Enter Your New Password" name="change_pass" /><br /><br />
+                    <input type="password" placeholder="Confirm Your New Password" name="change_pass_conf" /><br /><br />
+                    <input type="submit" value="Validate" name="change_submit" />
+                </form>
+            <?php } else { ?>
+                <form method="POST" action="">
+                    <input type="email" name="mail_recovery" placeholder="Enter your Email " />
+                    <br /><br />
+                    <input type="submit" name="recovery_submit" value="Send !" />
+                </form>
+            <?php } ?>
 
- <?php
-if(isset($error))
-{
-    echo '<font color="red">'.$error.'</font>';
-}else { echo ""; }
- ?>
+            <?php
+            if (isset($error)) {
+                echo '<font color="red">' . $error . '</font>';
+            } else {
+                echo "";
+            }
+            ?>
 
-    </div>
-</article>
+        </div>
+    </article>
 
 
 
 </body>
+
 </html>
